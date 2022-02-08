@@ -1,0 +1,37 @@
+.block-wraper{
+    position: relative;
+    .picter{
+        width: 360px;
+        height: 276px;
+    }
+
+    .baner{
+        position: absolute;
+        top: 220px;
+        left: 29px;
+        width: 302px;
+        height: 174px;
+        background-color: white;
+
+        .title{
+            margin: 24px 16px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 22px;
+            letter-spacing: 0.06em;
+            text-align: left;
+            text-transform: uppercase;
+
+        }
+        .info{
+            margin: 0px 16px 52px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0em;
+            text-align: left;
+            opacity: 0.8;
+        }
+
+    }
+}

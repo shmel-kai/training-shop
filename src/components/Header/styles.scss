@@ -1,0 +1,131 @@
+.header {
+    border-bottom: 2px solid #F8F8F8;
+    .info-container {
+        display: flex;
+        background-color: #121212;
+        justify-content: center;
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 1110px;
+    
+            .phone-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 31px;
+    
+                .link {
+                    padding-top: 3px;
+                    opacity: 0.8;
+                }
+            }
+
+            .address-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 53px;
+
+                .address {
+                    color: white;
+                    font-weight: 400;
+                    font-size: 11px;
+                    padding-top: 3px;
+                    opacity: 0.8;
+                }
+            }
+
+            .work-time-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .time {
+                    color: white;
+                    font-weight: 500;
+                    font-size: 11px;
+                    padding-top: 3px;
+                    opacity: 0.8;
+                }
+            }
+    
+            span {
+                color: white;
+            }
+    
+            .contacts {
+                display: flex;
+                padding: 6px 0;
+            }
+    
+            .icon {
+                width: 14px;
+                height: 14px;
+                margin-right: 8px;
+            }
+
+            .social {
+                margin-left: 10px;
+                margin-right: 0;
+            }
+    
+            .link {
+                text-decoration: none;
+                color: white;
+                font-weight: 700;
+                font-size: 11px;
+            }
+        }
+    }
+    .menu-container{
+        max-width: 1110px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        justify-content: space-between;
+
+        .logo{
+            padding-top: 17px;
+            padding-bottom: 17px;
+        }
+
+        .menu{
+            ul{
+                display: flex;
+                margin-top: 23px;
+
+                li{
+                    a{
+                        text-decoration: none;
+                        color: black;
+                    }
+                    list-style-type: none;
+                    font-size: 14px;
+                    font-weight: 400;
+                    margin-right: 32px;
+
+                }
+            }
+            
+        }
+        .self-navigation{
+            padding-top: 17px;
+            .button{
+                border: none; 
+                background: none;
+                padding: 0;
+                margin-left: 24px;
+                cursor: pointer;
+
+                .img-button{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            
+        }
+    }
+}

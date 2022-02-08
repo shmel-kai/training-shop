@@ -1,0 +1,48 @@
+.collection-wraper{
+    max-width: 1110px;
+    margin: 96px auto 0;
+    display: flex;
+    justify-content: space-between;
+    .block{
+        position: relative;
+
+        img{
+            width: 540px;
+            height: 260px;
+        }
+        .banner{
+            position: absolute;
+            top: calc(50% - 35px);
+            left: calc(50% - 141px);
+            width: 293px;
+            height: 71px;
+            background-color: white;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            .title{
+                margin-top: 5px;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 13px;
+                letter-spacing: 0.06em;
+                text-align: center;
+                text-transform: uppercase;
+                opacity: 0.6;
+    
+            }
+            .description{
+                margin-bottom: 5px;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 18px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+            }
+    
+        }
+    }
+
+
+}

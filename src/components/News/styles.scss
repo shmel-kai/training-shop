@@ -1,0 +1,41 @@
+.wraper{
+    max-width: 1110px;
+    margin: 96px auto 155px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .top-part{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 48px;
+
+        .title{
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 25px;
+            letter-spacing: 0.06em;
+            margin: 0;
+        }
+
+        .button{
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 13px;
+            letter-spacing: 0.06em;
+            opacity: 0.6;
+            border: none;
+            background: none;
+            padding: 0;
+            margin-left: 24px;
+            cursor: pointer;
+        }
+    }
+
+    .news{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}

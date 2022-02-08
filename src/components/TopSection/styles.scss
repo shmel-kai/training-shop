@@ -1,0 +1,127 @@
+.section-wraper{
+    max-width: 1110px;
+    margin: 28px auto 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .left-block{
+        position: relative;
+        .slider{
+            .banner{
+                width: 290px;
+                height: 100px;
+                background-color: white;
+                position: absolute;
+                top: calc(50% - 50px);
+                left: calc(50% - 145px);
+                display: flex;
+                flex-direction: column;
+                border-radius: 4px;
+                .title{
+                    margin-top: 25px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 13px;
+                    letter-spacing: 0.06em;
+                    opacity: 40%;
+                    text-transform: uppercase;
+                }
+                .banners-text{
+                    margin-top: 14px;
+                    font-size: 22px;
+                    font-weight: 600;
+                    line-height: 25px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                }
+                
+            }
+            button{
+                border: none; 
+                background: none;
+                padding: 0;
+                margin-left: 24px;
+                position: absolute;
+                cursor: pointer;
+                
+            }
+
+            .left-arrows{
+                top: calc(50% - 20px);
+                left: -1%;
+                
+            }
+            .right-arrows{
+                top: calc(50% - 20px);
+                left: 85%;
+            }
+
+        }
+        
+    }
+    .right-block{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .clowse-section{
+            display: flex;
+            justify-content: space-between;
+            .clowse{
+                position: relative;
+                .label{
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 48px;
+                    width: 118px;
+                    background-color: white;
+                    border-radius: 4px;
+                    .span{
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 22px;
+                        letter-spacing: 0.06em;
+                        text-transform: uppercase;
+                    }
+                }
+                .woomen-banner{
+                    top: calc(50% - 20px);
+                    left: calc(50% - 59px);
+                }
+                .men-banner{
+                    top: calc(50% - 20px);
+                    left: calc(50% - 59px);
+                }
+            }
+        }
+        .accessories{
+            position: relative;
+
+            .label{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 48px;
+                width: 166px;
+                background-color: white;
+                top: calc(50% - 20px);
+                left: calc(50% - 20px);
+                border-radius: 4px;
+                span{
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 22px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+}

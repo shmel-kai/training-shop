@@ -1,0 +1,153 @@
+.footer{
+    .footer-wraper{
+        max-width: 1110px;
+        margin: 0 auto;
+    }
+    .top-part{
+        background-color: #121212;
+        height: 56px;
+
+        .top{
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .footer-title{
+                color: white;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 18px;
+                letter-spacing: 0.06em;
+            }
+
+            .input-block{
+                display: flex;
+                align-items: center;
+
+                .footer-input{
+                    padding-left: 16px;
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 18px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    color: white;
+                    background: rgba(255, 255, 255, 0.2);
+                    border: none;
+                    width: 400px;
+                    height: 32px;
+                    margin-right: 12px;
+                }
+                .footer-input::placeholder {
+                    color: white;
+                    opacity: 0.4;
+                }
+                .footer-button{
+                    background-color: #121212;
+                    border: 2px solid white;
+                    color: white;
+                    opacity: 0.9;
+                    width: 108px;
+                    height: 32px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 18px;
+                    letter-spacing: 0.06em;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+            .icon {
+                width: 14px;
+                height: 14px;
+                margin-right: 8px;
+            }
+
+            .social {
+                align-items: flex-end;
+                margin-left: 10px;
+                margin-right: 0;
+            }
+    
+        }
+    }
+    .middle-part{
+        .middle{
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            .categories{
+                .catrgories-title{
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 13px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+
+                }
+                ul{
+                    padding: 0;
+
+                    
+    
+                    li{
+                        list-style-type: none;
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 34px;
+                        letter-spacing: 0em;
+                        opacity: 0.8;
+
+                            a{
+                                text-decoration: none;
+                                color: #121212; 
+                                display: flex;
+                                align-items: center;      
+                            } 
+                            img{
+                                width: 18px;
+                                margin-right: 8px;
+                            }                       
+                    }
+
+                    .email a {
+                        text-decoration: underline;
+                    }
+                    
+                }
+                
+            
+            }
+        }
+
+    }
+    .bottom-part{
+        background-color: #F8F8F8;
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 0;
+
+            .copyright {
+                font-weight: 500;
+                font-size: 11px;
+                opacity: 0.8;
+            }
+
+            .group {
+                width: 381px;
+            }
+
+            .pr-link {
+                color: #121212;
+                font-size: 11px;
+                font-weight: 500;
+                opacity: 0.8;
+            }
+        }
+    }
+}
