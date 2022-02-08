@@ -48,16 +48,16 @@ const Header = (props1) => {
                         </div>
                     </div>
                     <div className="soc">
-                        <a href="#">
+                        <a href="/">
                             <img src={FacebookIcon} className="icon social" alt="facebook-icon" />
                         </a>
-                        <a href="#">
+                        <a href="/">
                             <img src={TwitterIcon} className="icon social" alt="facebook-icon" />
                         </a>
-                        <a href="#">
+                        <a href="/">
                             <img src={InstagramIcon} className="icon social" alt="instagram-icon" />
                         </a>
-                        <a href="#">
+                        <a href="/">
                             <img src={PinterestIcon} className="icon social" alt="pinterest-icon" />
                         </a>
                     </div>
@@ -65,19 +65,19 @@ const Header = (props1) => {
             </div>
             <div className="menu-container">
                 <div className="logo">
-                    <a href="#">
+                    <a href="/">
                         <img src={Logo} className="img-logo" alt="CleverShop" />
                     </a>
                 </div>
                 <nav className="menu">
                     <ul>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Women</a></li>
-                        <li><a href="">Men</a></li>
-                        <li><a href="">Beauty</a></li>
-                        <li><a href="">Accessories</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/">Women</a></li>
+                        <li><a href="/">Men</a></li>
+                        <li><a href="/">Beauty</a></li>
+                        <li><a href="/">Accessories</a></li>
+                        <li><a href="/">Blog</a></li>
+                        <li><a href="/">Contact</a></li>
                     </ul>
                 </nav>
                 <div className="self-navigation">

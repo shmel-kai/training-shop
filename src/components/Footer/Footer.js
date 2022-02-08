@@ -23,16 +23,16 @@ const Footer = () => {
                         <button className='footer-button'>JOIN US</button>
                     </div>
                     <div className="social">
-                        <a href="#">
+                        <a href="/">
                             <img src={FacebookIcon} className="icon social" alt="facebook-icon" />
                         </a>
-                        <a href="#">
+                        <a href="/">
                             <img src={TwitterIcon} className="icon social" alt="facebook-icon" />
                         </a>
-                        <a href="#">
+                        <a href="/">
                             <img src={InstagramIcon} className="icon social" alt="instagram-icon" />
                         </a>
-                        <a href="#">
+                        <a href="/">
                             <img src={PinterestIcon} className="icon social" alt="pinterest-icon" />
                         </a>
                     </div>
@@ -43,46 +43,46 @@ const Footer = () => {
                     <div className='categories'>
                         <span className='catrgories-title'>Categories</span>
                         <ul>
-                            <li><a href="">Men</a></li>
-                            <li><a href="">Women</a></li>
-                            <li><a href="">Accessories</a></li>
-                            <li><a href="">Beauty</a></li>
+                            <li><a href="/">Men</a></li>
+                            <li><a href="/">Women</a></li>
+                            <li><a href="/">Accessories</a></li>
+                            <li><a href="/">Beauty</a></li>
                         </ul>
                     </div>
                     <div className='categories'>
                         <span className='catrgories-title'>Infomation</span>
                         <ul>
-                            <li><a href="">Contact Us</a></li>
-                            <li><a href="">About Us</a></li>
-                            <li><a href="">Blog</a></li>
-                            <li><a href="">FAQs</a></li>
+                            <li><a href="/">Contact Us</a></li>
+                            <li><a href="/">About Us</a></li>
+                            <li><a href="/">Blog</a></li>
+                            <li><a href="/">FAQs</a></li>
                         </ul>
                     </div>
                     <div className='categories'>
                         <span className='catrgories-title'>Useful links</span>
                         <ul>
-                            <li><a href="">Terms & Conditions</a></li>
-                            <li><a href="">Returns & Exchanges</a></li>
-                            <li><a href="">Shipping & Delivery</a></li>
-                            <li><a href="">Privacy Policy</a></li>
+                            <li><a href="/">Terms & Conditions</a></li>
+                            <li><a href="/">Returns & Exchanges</a></li>
+                            <li><a href="/">Shipping & Delivery</a></li>
+                            <li><a href="/">Privacy Policy</a></li>
                         </ul>                   
                     </div>
                     <div className='categories'>
                         <span className='catrgories-title'>CONTACT US</span>
                         <ul>
-                            <li><a href="">
+                            <li><a href="/">
                                 <img src={LocationIcon} className="location" alt="Location-Icon" />
                                 <span>Belarus, Gomel, Lange 17</span></a>
                             </li>
-                            <li><a href="">
+                            <li><a href="/">
                                 <img src={PhoneIcon} className="phone" alt="Phone-Icon" />
                                 <span>+375 29 100 20 30</span></a>
                             </li>
-                            <li><a href="">
+                            <li><a href="/">
                                 <img src={ClockIcon} className="clock" alt="Clock-Icon" />
                                 <span>All week 24/7</span></a>
                             </li>
-                            <li className="email"><a href="">
+                            <li className="email"><a href="/">
                                 <img src={MailIcon} className="mail" alt="Mail-Icon" />
                                 <span>info@clevertec.ru</span></a>
                             </li>
