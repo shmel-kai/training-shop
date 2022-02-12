@@ -6,9 +6,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const basename = document.querySelector('base')?.getAttribute('href') ?? '/'
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename} >
       <App />
     </BrowserRouter>
   </React.StrictMode>,
