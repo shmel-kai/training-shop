@@ -1,0 +1,80 @@
+.categories-block {
+    background-color: #F8F8F8;
+    .categories-wraper {
+        max-width: 1110px;
+        margin: 0 auto;
+
+        .categories-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 32px;
+
+            .part {
+                font-size: 11px;
+                font-weight: 500;
+                line-height: 18px;
+                letter-spacing: 0em;
+                opacity: 0.6;
+                display: flex;
+                align-items: center;
+                padding: 0;
+            
+
+                button{
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: #F8F8F8;
+                    border: none;
+                    width: 61px;
+                    height: auto;
+                    cursor: pointer;
+
+                    .share{
+                        width: 18px;
+                    }
+                }
+
+            }
+            .left {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 103px;
+                color: #121212;
+                opacity: 1;
+
+                .home-link {
+                    text-decoration: none;
+                    color: #121212;
+                    opacity: 0.6;
+                }
+
+                .arrow {
+                    width: 9px;
+                }
+                .page-title{
+                    color: #121212;
+                }
+
+            }
+
+        }
+        .categories-title-block{
+            padding-top: 10px;
+            padding-bottom: 24px;
+            .categories-title {               
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 36px;
+                text-transform: uppercase;
+                margin: 0;
+            }
+        }
+        
+    }
+
+}

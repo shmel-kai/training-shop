@@ -1,0 +1,92 @@
+.filter-wraper {
+    max-width: 1110px;
+    margin: 32px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        border: none;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        
+
+    }
+
+    span {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0.06em;
+        opacity: 0.6;
+        text-transform: uppercase;
+
+    }
+
+    .filter-part {
+
+        .button-in-filter-part {
+
+            .filter {
+                width: 32px;
+                margin-right: 12px;
+            }
+
+            .filter-span {
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 15px;
+                letter-spacing: 0.06em;
+                opacity: 0.6;
+        
+            }
+        }
+    }
+
+    .middle-part {
+        display: flex;
+
+            .menu-button {
+
+                .menu {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 6px;
+                }
+
+            }
+
+            .all-button {
+                .all {
+                    width: 24px;
+                    height: 24px;
+                    margin-left: 6px;
+                }
+            }
+    }
+
+    .bottom-part {
+
+        .button-in-bottom-part {
+            display: flex;
+            align-items: center;
+            .span-best{
+
+            }
+
+            .arrow1 {
+                width: 12px;
+                height: 12px;
+                margin-left: 4px;
+            }
+        }
+
+    }
+   
+
+
+}
