@@ -6,11 +6,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const basename = document.querySelector('base')?.getAttribute('href') ?? '/'
-
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename={basename} >
+    <HashRouter >
       <App />
     </HashRouter>
   </React.StrictMode>,
