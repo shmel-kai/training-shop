@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
@@ -10,9 +10,9 @@ const basename = document.querySelector('base')?.getAttribute('href') ?? '/'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename={basename} >
+    <HashRouter basename={basename} >
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
