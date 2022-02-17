@@ -9,7 +9,7 @@ import { Footer } from '../components/Footer/index'
 
 function Men( ) {
     return (
-      <div className="App" data-test-id={`products-page-${items.type}`}>
+      <div className="App" data-test-id="products-page-men">
         <Header />
         <CategoriesTitle title="Men"/>
         <Filter />

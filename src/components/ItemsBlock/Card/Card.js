@@ -3,7 +3,7 @@ import './styles.scss';
 import Astra from './Asta.png';
 import AstraY from './AstraY.png';
 
-const Card = ({ data }) => {
+const Card = ({ data, type }) => {
     const navigateFunc = useNavigate();
     const onCardClick = () => {
         navigateFunc('/product', { state: data }); 
@@ -14,6 +14,7 @@ const Card = ({ data }) => {
         <div 
             className='card-wraper'
             onClick={onCardClick}
+            data-test-id={`clothes-card-${type}`}
         >
             <img src={data.img} alt='jeens'/>
             <span className='name'>{data.name}</span>
