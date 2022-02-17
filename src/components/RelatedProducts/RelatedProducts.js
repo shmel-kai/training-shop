@@ -17,7 +17,7 @@ const RelatedProducts = ({ meta }) => {
             </div>      
             <div className='card-block'>
                 {
-                    meta.map((element) => <Card data={element} key={element.id} />)
+                    meta.map((element, index) => <Card itemId={index + 1} key={element.id} data={element} data-test-id="clothes-card-wome" type="women" />)
                 }
             </div>
             

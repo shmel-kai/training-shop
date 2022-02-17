@@ -13,7 +13,7 @@ function Men( ) {
         <Header />
         <CategoriesTitle title="Men"/>
         <Filter />
-        <ItemsBlock items={items.men} title="MEN’S" headerBlock={false} buttonAll={false}/>
+        <ItemsBlock type="men" items={items.men} title="MEN’S" headerBlock={false} buttonAll={false}/>
         <Loading />
         <Footer />
       </div>

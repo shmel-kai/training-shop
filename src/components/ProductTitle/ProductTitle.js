@@ -13,7 +13,7 @@ const ProductTitle = ({previousPage, title}) => {
                     <div className='part left'>
                         <Link to='/' className='home-link'>Home</Link>
                         <img className='arrow previous-arrow' src={arrow} alt='arrow' />
-                        <span className='page-title previous-page'>{previousPage}</span>
+                        <Link to={`/${previousPage}`} className='page-title previous-page'>{previousPage}</Link>
                         <img className='arrow' src={arrow} alt='arrow' />
                         <span className='page-title current-page '>{title}</span>
                     </div>
