@@ -24,7 +24,7 @@ const ItemsBlock = ({ items, title, headerBlock = true, buttonAll = true, type }
             }
             <div className='card-block'>
                 {
-                    items.map(item => <Card  key={item.id} data={item} data-test-id={`clothes-card-${type}`} type={type} />)
+                    items.map((item, index) => <Card itemId={index + 1} key={item.id} data={item} data-test-id={`clothes-card-${type}`} type={type} />)
                 }
             </div>
             {

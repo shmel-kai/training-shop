@@ -3,10 +3,10 @@ import './styles.scss';
 import Astra from './Asta.png';
 import AstraY from './AstraY.png';
 
-const Card = ({ data, type }) => {
+const Card = ({ data, type, itemId }) => {
     const navigateFunc = useNavigate();
     const onCardClick = () => {
-        navigateFunc('/product', { state: data }); 
+        navigateFunc(`/product/${type}/${itemId}`, { state: data }); 
         // по клику открывается страница карточки и переносятся данные с метадата
     }; 
 
