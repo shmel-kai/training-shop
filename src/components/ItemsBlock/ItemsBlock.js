@@ -3,7 +3,7 @@ import { Card } from './Card/index';
 
 const ItemsBlock = ({ items, title, headerBlock = true, buttonAll = true, type }) => {
     return (
-        <div className='ItemsBlock-wraper'>
+        <div className='ItemsBlock-wraper' data-test-id={`clothes-${type}`}>
             {
                 headerBlock && (
                     <div className='top-wraper'> 
@@ -24,7 +24,7 @@ const ItemsBlock = ({ items, title, headerBlock = true, buttonAll = true, type }
             }
             <div className='card-block'>
                 {
-                    items.map(item => <Card  key={item.id} data={item} data-test-id={`clothes-card-${type}`} />)
+                    items.map(item => <Card  key={item.id} data={item} data-test-id={`clothes-card-${type}`} type={type} />)
                 }
             </div>
             {
