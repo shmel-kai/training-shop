@@ -7,17 +7,17 @@ import { Loading } from '../components/Loading';
 
 import { Footer } from '../components/Footer/index'
 
-function Women( ) {
+function Men( ) {
     return (
       <div className="App" data-test-id={`products-page-${items.type}`}>
         <Header />
-        <CategoriesTitle title="Women"/>
+        <CategoriesTitle title="Men"/>
         <Filter />
-        <ItemsBlock items={items.women} title="WOMEN’S" headerBlock={false} buttonAll={false}/>
+        <ItemsBlock items={items.men} title="MEN’S" headerBlock={false} buttonAll={false}/>
         <Loading />
         <Footer />
       </div>
     );
   }
   
-  export default Women;
+  export default Men;

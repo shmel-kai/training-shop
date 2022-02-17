@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
+
 import PhoneIcon from './icons/phone.png';
 import LocationIcon from './icons/location.png';
 import ClockIcon from './icons/clock.png';
@@ -24,7 +26,7 @@ const Header = (props1) => {
     };
 
     return (
-        <header className="header">
+        <header className="header" data-test-id="header">
             <div className="info-container">
                 <div className="info">
                     <div className="contacts">
@@ -65,19 +67,19 @@ const Header = (props1) => {
             </div>
             <div className="menu-container">
                 <div className="logo">
-                    <a href="/">
+                    <Link to='/' data-test-id="header-logo-link">
                         <img src={Logo} className="img-logo" alt="CleverShop" />
-                    </a>
+                    </Link>
                 </div>
-                <nav className="menu">
+                <nav className="menu" data-test-id="menu">
                     <ul>
-                        <li><a href="/">About Us</a></li>
-                        <li><a href="/">Women</a></li>
-                        <li><a href="/">Men</a></li>
-                        <li><a href="/">Beauty</a></li>
-                        <li><a href="/">Accessories</a></li>
-                        <li><a href="/">Blog</a></li>
-                        <li><a href="/">Contact</a></li>
+                        <li><Link to='/' data-test-id="menu-link-">About us</Link></li>
+                        <li><Link to='/women' data-test-id="menu-link-women">Women</Link></li>
+                        <li><Link to='/men' data-test-id="menu-link-men">Men</Link></li>
+                        <li><Link to='/' data-test-id="menu-link-">Beauty</Link></li>
+                        <li><Link to='/' data-test-id="menu-link-">Accessories</Link></li>
+                        <li><Link to='/' data-test-id="menu-link-">Blog</Link></li>
+                        <li><Link to='/' data-test-id="menu-link-">Contact</Link></li>
                     </ul>
                 </nav>
                 <div className="self-navigation">

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
 import FacebookIcon from './assets/facebook.png';
@@ -14,7 +15,7 @@ import MailIcon from './assets/mail.png';
 
 const Footer = () => {
     return (
-       <footer className='footer'>
+       <footer className='footer' data-test-id="footer">
            <div className='top-part'>
                <div className='footer-wraper top'>
                     <span className='footer-title'>BE IN TOUCH WITH US:</span>
@@ -67,27 +68,35 @@ const Footer = () => {
                             <li><a href="/">Privacy Policy</a></li>
                         </ul>                   
                     </div>
-                    <div className='categories'>
+                    <nav id='contact' className='categories'>
                         <span className='catrgories-title'>CONTACT US</span>
                         <ul>
-                            <li><a href="/">
-                                <img src={LocationIcon} className="location" alt="Location-Icon" />
-                                <span>Belarus, Gomel, Lange 17</span></a>
+                            <li>
+                                <Link to='/' data-test-id="footer-nav-link-">
+                                    <img src={LocationIcon} className="location" alt="Location-Icon" />
+                                    <span>Belarus, Gomel, Lange 17</span>
+                                </Link>
                             </li>
-                            <li><a href="/">
-                                <img src={PhoneIcon} className="phone" alt="Phone-Icon" />
-                                <span>+375 29 100 20 30</span></a>
+                            <li>
+                                <Link to='/' data-test-id="footer-nav-link-">
+                                    <img src={PhoneIcon} className="phone" alt="Phone-Icon" />
+                                    <span>+375 29 100 20 30</span>
+                                </Link>
                             </li>
-                            <li><a href="/">
-                                <img src={ClockIcon} className="clock" alt="Clock-Icon" />
-                                <span>All week 24/7</span></a>
+                            <li>
+                                <Link to='/' data-test-id="footer-nav-link-">
+                                    <img src={ClockIcon} className="clock" alt="Clock-Icon" />
+                                    <span>All week 24/7</span>
+                                </Link>
                             </li>
-                            <li className="email"><a href="/">
-                                <img src={MailIcon} className="mail" alt="Mail-Icon" />
-                                <span>info@clevertec.ru</span></a>
+                            <li className="email">
+                                <Link to='/' data-test-id="footer-nav-link-">
+                                    <img src={MailIcon} className="mail" alt="Mail-Icon" />
+                                    <span>info@clevertec.ru</span>
+                                </Link>
                             </li>
                         </ul>
-                    </div>
+                    </nav>
                 </div>
            </div>
            <div className='bottom-part'>

@@ -1,0 +1,25 @@
+.products-wraper {
+    max-width: 1110px;
+    margin: 96px auto 96px;
+
+    .top-part {
+        margin-bottom: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 25px;
+            letter-spacing: 0.06em;
+    
+        }
+
+        img {
+            width: 40px;
+            margin-left: 16px;
+        }
+    }
+
+}

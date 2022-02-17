@@ -1,0 +1,41 @@
+.review-container {
+
+
+    .reviewer-info {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .name {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 22px;
+            letter-spacing: 0em;
+        }
+
+        .more-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .time {
+                margin-right: 6px;
+                font-size: 11px;
+                font-weight: 500;
+                line-height: 18px;
+                letter-spacing: 0em;
+                opacity: 0.6;
+            }
+        }
+
+}
+
+    .content {
+        margin-top: 12px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        opacity: 0.8;
+    }
+}

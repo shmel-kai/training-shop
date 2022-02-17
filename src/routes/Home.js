@@ -11,17 +11,17 @@ import { Footer } from '../components/Footer/index'
 
 function Home() {
     return (
-      <div className="App">
+      <>
         <Header />
         <TopSection />
         <Details />
-        <ItemsBlock items={items.women} title="WOMEN’S"/>
-        <ItemsBlock items={items.men} title="MEN’S" />
+        <ItemsBlock items={items.women} title="WOMEN’S" data-test-id="clothes-women" type="women"/>
+        <ItemsBlock items={items.men} title="MEN’S" data-test-id="clothes-men" type="men"/>
         <Collection />
         <Subscribe />
         <News sections={sections.block}/>
         <Footer />
-      </div>
+      </>
     );
   }
   
