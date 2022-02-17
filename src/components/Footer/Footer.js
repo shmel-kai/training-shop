@@ -44,8 +44,15 @@ const Footer = () => {
                     <div className='categories'>
                         <span className='catrgories-title'>Categories</span>
                         <ul>
-                            <li><a href="/">Men</a></li>
-                            <li><a href="/">Women</a></li>
+                            <li>
+                                <Link to='/men' data-test-id="footer-nav-link-men">
+                                    Men
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/women' data-test-id="footer-nav-link-women">
+                                    Women
+                                </Link></li>
                             <li><a href="/">Accessories</a></li>
                             <li><a href="/">Beauty</a></li>
                         </ul>
