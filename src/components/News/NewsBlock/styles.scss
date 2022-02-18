@@ -1,8 +1,30 @@
 .block-wraper{
     position: relative;
+
+    @media (min-width: 641px) and (max-width: 1160px) {
+        margin: 0 20px;
+        margin-bottom: 120px;
+    }
+
+    @media (min-width: 320px) and (max-width: 640px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
     .picter{
         width: 360px;
         height: 276px;
+
+        @media (min-width: 641px) and (max-width: 1160px) {
+            width: 100%;
+            object-fit: cover;
+        }
+    
+        @media (min-width: 320px) and (max-width: 640px) {
+            margin: 50px 5% 0;
+            margin-bottom: 50px;
+        }
     }
 
     .baner{
@@ -12,6 +34,15 @@
         width: 302px;
         height: 174px;
         background-color: white;
+
+        @media (min-width: 641px) and (max-width: 1160px) {
+            left: 7%;
+        }
+
+        @media (min-width: 320px) and (max-width: 640px) {
+            left: auto;
+            top: 245px;
+        }
 
         .title{
             margin: 24px 16px 12px;
@@ -33,5 +64,11 @@
             opacity: 0.8;
         }
 
+    }
+}
+
+.block-wraper:last-child {
+    @media (min-width: 320px) and (max-width: 640px) {
+        margin-bottom: 70px;
     }
 }

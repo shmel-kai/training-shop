@@ -10,7 +10,7 @@ const TopSection = () => {
     return (
         <div className="section-wraper">
             <div className="left-block">
-                <img src={Rectangle} className="" alt="slider" />
+                <img  className='big-image' src={Rectangle} alt="slider" />
                 <div className='slider'>
                     <div className='banner'>
                         <span className='title'>Banner</span>
@@ -41,7 +41,7 @@ const TopSection = () => {
                     </div>
                 </div>
                 <div className="accessories">
-                    <img src={Rectangle3} className="image" alt="accessories" />
+                    <img src={Rectangle3} className="accessories-image" alt="accessories" />
                     <div className="accessories-banner label">
                         <span>Accessories</span>
                     </div>

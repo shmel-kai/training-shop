@@ -3,12 +3,54 @@
     margin: 96px auto 0;
     display: flex;
     justify-content: space-between;
+
+    @media (min-width: 641px) and (max-width: 1160px) {
+        margin: 96px 5% 0;
+        
+    }
+
+    @media (min-width: 320px) and (max-width: 640px) {
+        margin: 45px 5% 0;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .left {
+        margin-right: 15px;
+    }
+
+    .right {
+        margin-left: 15px;
+    }
+
     .block{
         position: relative;
+        @media (min-width: 641px) and (max-width: 1160px) {
+            width: 100%;
+            
+        }
+    
+        @media (min-width: 320px) and (max-width: 640px) {
+            width: 100%;
+            margin: 2% 0;
+        }
 
         img{
             width: 540px;
             height: 260px;
+
+            @media (min-width: 641px) and (max-width: 1160px) {
+                height: 150px;
+                width: 100%;
+                object-fit: cover;
+                
+            }
+        
+            @media (min-width: 320px) and (max-width: 640px) {
+                height: 150px;
+                width: 100%;
+                object-fit: cover;
+            }
         }
         .banner{
             position: absolute;
@@ -21,6 +63,19 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
+
+            @media (min-width: 641px) and (max-width: 1160px) {
+                width: 50%;
+                left: 25%;
+            }
+        
+            @media (min-width: 320px) and (max-width: 640px) {
+                justify-content: center;
+                justify-content: space-evenly;
+                width: 50%;
+                left: 25%;
+            }
+
             .title{
                 margin-top: 5px;
                 font-size: 12px;
@@ -39,6 +94,16 @@
                 line-height: 18px;
                 letter-spacing: 0.06em;
                 text-transform: uppercase;
+                text-align: center;
+
+                @media (min-width: 641px) and (max-width: 1160px) {
+                    font-size: 13px;
+                }
+            
+                @media (min-width: 320px) and (max-width: 640px) {
+                    font-size: 14px;
+                
+                }
             }
     
         }

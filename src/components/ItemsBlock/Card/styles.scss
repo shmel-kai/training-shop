@@ -5,6 +5,10 @@
     text-align: left;
     margin-bottom: 30px;
 
+    @media (min-width: 641px) and (max-width: 1160px) {
+        margin-left: 20px;
+    }
+
     .name{
         margin-top: 16px;
         font-size: 14px;

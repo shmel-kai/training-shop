@@ -1,5 +1,8 @@
 .header {
     border-bottom: 2px solid #F8F8F8;
+
+
+ 
     .info-container {
         display: flex;
         background-color: #121212;
@@ -10,12 +13,26 @@
             justify-content: space-between;
             align-items: center;
             width: 1110px;
+            @media (min-width: 641px) and (max-width: 1160px) {
+                margin: auto 5%;
+            }
+
+            @media (min-width: 320px) and (max-width: 640px) {
+                margin: auto 5%;
+                flex-direction: column;
+            }
+    
     
             .phone-container {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin-right: 31px;
+
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin: auto;
+                }
+                
     
                 .link {
                     padding-top: 3px;
@@ -28,6 +45,10 @@
                 align-items: center;
                 justify-content: center;
                 margin-right: 53px;
+
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin: auto;
+                }
 
                 .address {
                     color: white;
@@ -42,6 +63,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin: auto;
+                }
 
                 .time {
                     color: white;
@@ -59,6 +84,11 @@
             .contacts {
                 display: flex;
                 padding: 6px 0;
+
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin: auto 20px;
+                    flex-direction: column;
+                }
             }
     
             .icon {
@@ -87,6 +117,18 @@
         margin: auto;
         justify-content: space-between;
 
+        @media (min-width: 641px) and (max-width: 1160px) {
+            flex-wrap: wrap;
+            margin: 0px 5% 0;
+            
+        }
+    
+        @media (min-width: 320px) and (max-width: 640px) {
+            margin: 0px 5% 0;
+            flex-wrap: wrap;
+        }
+            
+
         .logo{
             padding-top: 17px;
             padding-bottom: 17px;
@@ -96,6 +138,10 @@
             ul{
                 display: flex;
                 margin-top: 23px;
+            
+                @media (min-width: 320px) and (max-width: 640px) {
+                    flex-wrap: wrap;
+                }
 
                 li{
                     a{

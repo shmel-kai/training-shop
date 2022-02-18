@@ -29,7 +29,10 @@ const ItemsBlock = ({ items, title, headerBlock = true, buttonAll = true, type }
             </div>
             {
                 buttonAll && (
-                    <button className='all-items'>SEE ALL</button>
+                    <div className='button-wraper'>
+                        <button className='all-items'>SEE ALL</button>
+                    </div>
+                    
                 )
             }
         </div>      
