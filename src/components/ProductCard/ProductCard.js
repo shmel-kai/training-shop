@@ -36,6 +36,15 @@ import safe6 from './assets/safe6.png';
 import sizeGuide from './assets/SizeGuide.png';
 
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { Navigation } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+
 const ProductCard = () => {
     return (
         <div>
@@ -52,12 +61,20 @@ const ProductCard = () => {
                         <img className='image' src={photo4} alt='product' />
                     </div>
                     <div className='big-photo'>
-                        <div> 
-                            <img className='big-image' src={photo5} alt='product' />
-                            <img className='left-arrow' src={leftArrow} alt='product' />
-                            <img className='right-arrow' src={rightArrow} alt='product' /> 
-                        </div>
-                                        
+                        <Swiper navigation={true} modules={[Navigation]} className='mySwiper'>
+                            <SwiperSlide>
+                                <img className='big-image' src={photo5} alt='product' />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img className='big-image' src={photo5} alt='product' />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img className='big-image' src={photo5} alt='product' />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img className='big-image' src={photo5} alt='product' />
+                            </SwiperSlide>
+                        </Swiper>                
                     </div>
                 </div>
                 <div className='right-section'>
