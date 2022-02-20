@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
@@ -18,7 +19,34 @@ import User from './icons/user.png';
 
 import './styles.scss';
 
-const Header = (props1) => {
+const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
+   const onBurgerClick = () => {
+        // setIsMenuOpen(currValue => !currValue);
+       if (!isMenuOpen) {
+           setIsMenuOpen(true);
+           outsideClickListner()
+        } else {
+            setIsMenuOpen(false);
+        }
+   };
+
+    const outsideClickListner = () => {
+        if (isMenuOpen){
+            (setIsMenuOpen())
+        };
+    };
+
+   useEffect(() => {
+       const body = document.querySelector('body');
+       if (isMenuOpen) {
+           body.style.overflow = 'hidden';
+       } else {
+        body.style.overflow = 'auto';
+       }
+   }, [isMenuOpen])
+
     const navigateFunc = useNavigate();
     const onClickCallback = (event) => {
         event.preventDefault(); // отменяет дефолтное поведение при клике
@@ -26,7 +54,9 @@ const Header = (props1) => {
     };
 
     return (
-        <header className="header" data-test-id="header">
+        <header 
+        onClick={outsideClickListner}
+        className="header" data-test-id="header">
             <div className="info-container">
                 <div className="info">
                     <div className="contacts">
@@ -71,7 +101,7 @@ const Header = (props1) => {
                         <img src={Logo} className="img-logo" alt="CleverShop" />
                     </Link>
                 </div>
-                <nav className="menu" data-test-id="menu">
+                <nav className='menu' data-test-id="menu">
                     <ul>
                         <li><Link to='/' data-test-id="menu-link-">About us</Link></li>
                         <li><Link to='/women' data-test-id="menu-link-women">Women</Link></li>
@@ -83,12 +113,44 @@ const Header = (props1) => {
                     </ul>
                 </nav>
                 <div className="self-navigation">
-                    <button className="button"> <img src={Search} className="img-button" alt="Search"/></button>
-                    <button className="button"> <img src={Globe} className="img-button" alt="Globe"/></button>
-                    <button className="button"> <img src={User} className="img-button" alt="User"/></button>
-                    <button className="button"> <img src={Bag} className="img-button" alt="Bag"/></button>
+                    <button className="button">
+                        <img src={Search} className="img-button" alt="Search"/>
+                    </button>
+                    <button className="button">
+                        <img src={Globe} className="img-button" alt="Globe"/>
+                    </button>
+                    <button className="button">
+                        <img src={User} className="img-button" alt="User"/>
+                    </button>
+                    <button className="button">
+                        <img src={Bag} className="img-button" alt="Bag"/>
+                    </button>
+                    <button 
+                        onClick={onBurgerClick} 
+                        className={`button burger ${isMenuOpen ? 'open' : ''}`}
+                    >
+                        <span className="burger-line top"></span>
+                        <span className="burger-line middle"></span>
+                        <span className="burger-line bottom"></span>
+                    </button>
                 </div>
             </div>
+            {
+                <div className={` ${isMenuOpen ? 'overlay' : 'hidden-overlay'}`}>
+                    <nav className='burger-menu' data-test-id="menu">
+                        <ul>
+                            <li><Link to='/' data-test-id="menu-link-">About us</Link></li>
+                            <li><Link to='/women' data-test-id="menu-link-women">Women</Link></li>
+                            <li><Link to='/men' data-test-id="menu-link-men">Men</Link></li>
+                            <li><Link to='/' data-test-id="menu-link-">Beauty</Link></li>
+                            <li><Link to='/' data-test-id="menu-link-">Accessories</Link></li>
+                            <li><Link to='/' data-test-id="menu-link-">Blog</Link></li>
+                            <li><Link to='/' data-test-id="menu-link-">Contact</Link></li>
+                        </ul>
+                    </nav>
+                </div>
+            }
+            
         </header>
     );
 };

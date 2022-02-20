@@ -104,7 +104,14 @@
             line-height: 18px;
             letter-spacing: 0em;
            
-
+            @media (min-width: 641px) and (max-width: 1160px) {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+    
+            @media (min-width: 320px) and (max-width: 640px) {
+                margin: auto 5%;
+            }
 
             .reviews {
 

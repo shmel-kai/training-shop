@@ -10,6 +10,7 @@ import { sections } from '../components/News/MetaData/MetaData';
 import { Footer } from '../components/Footer/index'
 
 function Home() {
+
     return (
       <>
         <Header />
@@ -25,4 +26,4 @@ function Home() {
     );
   }
   
-  export default Home;
+export default Home;

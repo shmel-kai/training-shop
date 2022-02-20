@@ -4,50 +4,116 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media (min-width: 641px) and (max-width: 1160px) {
+        margin: 32px 5% 96px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media (min-width: 320px) and (max-width: 640px) {
+        margin: 32px 5% 96px;
+        flex-direction: column;
+    }
 
     .left-section {
         width: 49.5%;
         display: flex;
         justify-content: space-between;
 
+        @media (min-width: 641px) and (max-width: 1160px) {
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media (min-width: 320px) and (max-width: 640px) {
+            flex-direction: column;
+            width: 100%;
+        }
+
         .all-img {
             display: flex;
             flex-direction: column;
+
+            @media (min-width: 641px) and (max-width: 1160px) {
+                margin-right: 5%;
+            }
+        
+            @media (min-width: 320px) and (max-width: 640px) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
 
             .switch-block {
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
                 padding-bottom: 16px;
+                
+                @media (min-width: 320px) and (max-width: 640px) {
+                    
+                }
 
 
                 .up-arrow {
                     width: 40px;
                     transform: rotate(90deg);
+                    @media (min-width: 320px) and (max-width: 640px) {
+                        transform: rotate(0deg);
+                    }
                 }
 
                 .down-arrow {
                     width: 40px;
                     transform: rotate(90deg);
+                    @media (min-width: 320px) and (max-width: 640px) {
+                        transform: rotate(0deg);
+                    }
                 }
             }
 
             .image {
                 width: 94px;
                 padding-bottom: 16px;
+
+                @media (min-width: 320px) and (max-width: 640px) {
+                   width: 20%; 
+                }
             }
         }
 
         .big-photo {
             display: flex;
 
+            @media (min-width: 641px) and (max-width: 1160px) {
+                margin-left: 5%;
+            }
+        
+            @media (min-width: 320px) and (max-width: 640px) {
+                width: 100%;
+                margin-bottom: 5%;
+            }
+
             div{
                 position: relative; 
                 height: 560px;
 
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin-left: 0%;
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
                 .big-image {
                     width: 448px;
                     height: 560px;
+
+                    @media (min-width: 320px) and (max-width: 640px) {
+                        width: 100%;
+                        height: auto;
+                    }
                 }
     
                 .left-arrow {
@@ -75,7 +141,21 @@
         flex-direction: column;
         align-items: flex-start;
 
+        @media (min-width: 641px) and (max-width: 1160px) {
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media (min-width: 320px) and (max-width: 640px) {
+            flex-direction: column;
+            width: 100%;
+        }
+
         .color-block {
+            @media (min-width: 320px) and (max-width: 640px) {
+                width: 100%;
+
+            }
 
             .title {
                 display: flex;
@@ -100,9 +180,19 @@
             }
             .all-colors {
                 margin-bottom: 32px;
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin-right: 5%;
+                    display: flex;
+                    flex-direction: row;
+                }
                 img{
                     width: 64px;
-                    margin-right: 27px;
+                    margin-right: 27px; 
+            
+                    @media (min-width: 320px) and (max-width: 640px) {
+                        margin-right: 5%;
+                    
+                    }
                 }
             }
         }
@@ -167,6 +257,11 @@
             border-bottom: 2px solid #E6E6E6;
             padding: 32px 0;
 
+            @media (min-width: 320px) and (max-width: 640px) {
+                justify-content: space-between;
+            
+            }
+
             .price {
                 font-size: 22px;
                 font-style: normal;
@@ -190,12 +285,23 @@
                 letter-spacing: 0.06em;
                 text-align: center;
                 cursor: pointer;
+
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin-left: auto;
+                    margin-right: auto;
+                
+                }
             }
 
             .icon {
                 width: 24px;
                 height: 24px;
                 margin-right: 40px;
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin-left: auto;
+                    margin-right: auto;
+                
+                }
             }
         }
 
@@ -205,10 +311,21 @@
             justify-content: space-between;
             width: 100%;
 
+            @media (min-width: 320px) and (max-width: 640px) {
+                flex-direction: column;
+                margin: 5%;
+            
+            }
+
             .info-block-part {
                 display: flex;
                 align-items: center;
                 margin: 37px 0 32px;
+
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin: 15px 0 15px;
+                
+                }
             }
             .info-icon {
                 width: 24px;
@@ -234,6 +351,20 @@
             border-bottom: 2px solid #E6E6E6;
             padding: 32px 0;
             position: relative;
+
+            @media (min-width: 320px) and (max-width: 640px) {
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-evenly;
+            
+            }
+
+            img {
+                @media (min-width: 320px) and (max-width: 640px) {
+                    margin: 5%;
+                
+                }
+            }
 
             .safe-block-span {
                 position: absolute;

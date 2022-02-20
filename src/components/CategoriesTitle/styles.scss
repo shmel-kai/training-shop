@@ -1,14 +1,23 @@
 .categories-block {
     background-color: #F8F8F8;
+
     .categories-wraper {
         max-width: 1110px;
-        margin: 0 auto;
+        margin: 0 5%;
 
         .categories-menu {
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 32px;
+            @media (min-width: 641px) and (max-width: 1160px) {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+    
+            @media (min-width: 320px) and (max-width: 640px) {
+                margin: auto 5%;
+            }
 
             .part {
                 font-size: 11px;
@@ -65,6 +74,15 @@
         .categories-title-block{
             padding-top: 10px;
             padding-bottom: 24px;
+
+            @media (min-width: 641px) and (max-width: 1160px) {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+    
+            @media (min-width: 320px) and (max-width: 640px) {
+                margin: auto 5%;
+            }
             .categories-title {               
                 font-size: 26px;
                 font-style: normal;

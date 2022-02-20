@@ -16,6 +16,7 @@
     .left-block{
         position: relative;
         margin-right: 15px;
+        width: 48%;
 
         @media (min-width: 641px) and (max-width: 1160px) {
             margin: auto 0 15px;
@@ -43,6 +44,7 @@
             }
         }
         .slider{
+            z-index: 1;
 
             @media (min-width: 641px) and (max-width: 1160px) {
                 justify-content: center;
@@ -135,7 +137,28 @@
             }
 
         }
-        
+
+        .swiper-button-prev {
+            width: 60px;
+            left: 24px;
+            background-image: url('./img/left.png');
+            background-repeat: no-repeat;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .swiper-button-next {
+            width: 64px;
+            right: 0;
+            background-image: url('./img/right.png');
+            background-repeat: no-repeat;
+
+            &::after {
+                display: none;
+            }
+        }
     }
     .right-block{
         display: flex;
