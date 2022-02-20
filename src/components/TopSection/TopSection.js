@@ -3,8 +3,6 @@ import Rectangle from './img/Rectangle.jpeg';
 import Rectangle1 from './img/Rectangle1.jpeg';
 import Rectangle2 from './img/Rectangle2.jpeg';
 import Rectangle3 from './img/Rectangle3.jpeg';
-import Right from './img/right.png';
-import Left from './img/left.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Navigation } from 'swiper';
