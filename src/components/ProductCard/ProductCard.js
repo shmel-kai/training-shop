@@ -2,28 +2,23 @@ import { Rating } from '../Rating';
 import { Review } from '../Review';
 import { RelatedProducts } from '../RelatedProducts'
 import { meta } from '../RelatedProducts/meta';
+import { useRef } from 'react';
 
 import './styles.scss';
-import photo1 from './photo1.jpeg';
-import photo2 from './photo2.jpeg';
-import photo3 from './photo3.jpeg';
-import photo4 from './photo4.jpeg';
+
 import photo5 from './photo5.jpeg';
 import leftArrow from './leftArrow.png';
 import rightArrow from './rightArrow.png';
 import Heart from './assets/heart.png';
 import Scale from './assets/scale.png';
-
 import img1 from './assets/img1.jpeg';
 import img2 from './assets/img2.jpeg';
 import img3 from './assets/img3.jpeg';
 import img4 from './assets/img4.jpeg';
-
 import refresh from './assets/refresh.png';
 import mail from './assets/mail.png';
 import truck from './assets/truck.png';
 import annotation from './assets/annotation.png';
-
 import safe0 from './assets/safe0.png';
 import safe1 from './assets/safe1.png';
 import safe2 from './assets/safe2.png';
@@ -31,37 +26,56 @@ import safe3 from './assets/safe3.png';
 import safe4 from './assets/safe4.png';
 import safe5 from './assets/safe5.png';
 import safe6 from './assets/safe6.png';
-
-
 import sizeGuide from './assets/SizeGuide.png';
 
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import { Navigation } from 'swiper';
+import { Navigation, Controller } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import 'swiper/css/controller';
+
+import { useState } from 'react';
+
+import { metaSwiper } from './metaSwiper';
 
 
 const ProductCard = () => {
+    const [currentItemIndex, setCurrentItemIndex] = useState(0);
+    const swiperRef = useRef(null);
+
+    const onNextControlClick = () => swiperRef.current?.swiper.slideNext();
+    const onPrevControlClick = () => swiperRef.current?.swiper.slidePrev();
+
     return (
         <div>
             <div className='product-card-wraper'>
                 <div className='left-section'>
                     <div className='all-img'>
                         <div className='switch-block'>
-                            <img className='up-arrow' src={leftArrow} alt='product' />
-                            <img className='down-arrow' src={rightArrow} alt='product' /> 
+                            <img onClick={onPrevControlClick} className='up-arrow' src={leftArrow} alt='product' />
+                            <img onClick={onNextControlClick} className='down-arrow' src={rightArrow} alt='product' /> 
                         </div>
-                        <img className='image' src={photo1} alt='product' />
-                        <img className='image' src={photo2} alt='product' />
-                        <img className='image' src={photo3} alt='product' />
-                        <img className='image' src={photo4} alt='product' />
+
+                        {
+                            metaSwiper.map((element, index) => (
+                                <img 
+                                    key={element.id}
+                                    className={`image ${currentItemIndex === index ? '' : 'disable'}`}  
+                                    src={element.img} 
+                                    alt='product' 
+                                />
+                            )) 
+                        }
                     </div>
                     <div className='big-photo'>
-                        <Swiper navigation={true} modules={[Navigation]} className='mySwiper'>
+                        <Swiper 
+                            ref={swiperRef}
+                            navigation={true} 
+                            modules={[Controller, Navigation]} 
+                            className='mySwiper'
+                            onSlideChange={(event) => setCurrentItemIndex(event.realIndex)}
+                            data-test-id="product-slider"
+                        >
                             <SwiperSlide>
                                 <img className='big-image' src={photo5} alt='product' />
                             </SwiperSlide>

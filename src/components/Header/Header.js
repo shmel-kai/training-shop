@@ -128,6 +128,7 @@ const Header = () => {
                     <button 
                         onClick={onBurgerClick} 
                         className={`button burger ${isMenuOpen ? 'open' : ''}`}
+                        data-test-id='burger-menu-btn'
                     >
                         <span className="burger-line top"></span>
                         <span className="burger-line middle"></span>
@@ -137,7 +138,7 @@ const Header = () => {
             </div>
             {
                 <div className={` ${isMenuOpen ? 'overlay' : 'hidden-overlay'}`}>
-                    <nav className='burger-menu' data-test-id="menu">
+                    <nav className='burger-menu' data-test-id="burger-menu">
                         <ul>
                             <li><Link to='/' data-test-id="menu-link-">About us</Link></li>
                             <li><Link to='/women' data-test-id="menu-link-women">Women</Link></li>

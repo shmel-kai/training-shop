@@ -28,6 +28,7 @@ const RelatedProducts = ({ meta }) => {
                 </div>
             </div>
             <Swiper
+                data-test-id="related-slider"
                 navigation={{
                     prevEl: navigationPrevRef.current,
                     nextEl: navigationNextRef.current,
@@ -41,7 +42,7 @@ const RelatedProducts = ({ meta }) => {
                 spaceBetween={50}
                 slidesPerView={4}
                 breakpoints={{
-                    1160: { slidesPerView: 4, spaceBetween: 50 },
+                    1160: { slidesPerView: 4, spaceBetween: 30 },
                     950: { slidesPerView: 3, spaceBetween: 20 },
                     640: { slidesPerView: 2 },
                     320: { slidesPerView: 1 },

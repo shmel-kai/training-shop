@@ -16,7 +16,12 @@ const TopSection = () => {
     return (
         <div className="section-wraper">
             <div className="left-block">
-                <Swiper navigation={true} modules={[Navigation]} className='mySwiper'>
+                <Swiper 
+                    navigation={true} 
+                    modules={[Navigation]} 
+                    className='mySwiper'
+                    data-test-id="main-slider"
+                    >
                     <SwiperSlide>
                         <img  className='big-image' src={Rectangle} alt="slider" />
                         <div className='slider'>
