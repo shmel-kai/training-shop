@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/training-shop/static/css/main.1b7e4cd1.css",
-    "main.js": "/training-shop/static/js/main.72250d1b.js",
+    "main.css": "/training-shop/static/css/main.59d910ac.css",
+    "main.js": "/training-shop/static/js/main.82c5499d.js",
     "static/js/787.47ca6e30.chunk.js": "/training-shop/static/js/787.47ca6e30.chunk.js",
     "static/media/Daco.png": "/training-shop/static/media/Daco.5fb553fd6edd103dc6aa.png",
     "static/media/Jhon.png": "/training-shop/static/media/Jhon.a602f8a2083d2d6829d4.png",
@@ -38,20 +38,17 @@
     "static/media/photo1.jpeg": "/training-shop/static/media/photo1.51fb1cf3e698cdc2083c.jpeg",
     "static/media/Group.png": "/training-shop/static/media/Group.924516d1cb359290e8cf.png",
     "static/media/Rectangle2.jpeg": "/training-shop/static/media/Rectangle2.b6cd01c12e335cbef2a0.jpeg",
-    "static/media/photo3.jpeg": "/training-shop/static/media/photo3.8b37d888f5d6f6788783.jpeg",
-    "static/media/photo2.jpeg": "/training-shop/static/media/photo2.032ee13745743b14d768.jpeg",
-    "static/media/photo4.jpeg": "/training-shop/static/media/photo4.9c664317f396c2c2b5dc.jpeg",
     "static/media/img1.jpeg": "/training-shop/static/media/img1.3524fd24f1ba57ecf7de.jpeg",
     "static/media/CleverShop.svg": "/training-shop/static/media/CleverShop.458fe7e5089d3c2642be67e88faf7931.svg",
     "static/media/img3.jpeg": "/training-shop/static/media/img3.1e51c2d08c433aa58f25.jpeg",
     "static/media/img4.jpeg": "/training-shop/static/media/img4.4f4c2bee82f2b5a5a1e5.jpeg",
     "index.html": "/training-shop/index.html",
-    "main.1b7e4cd1.css.map": "/training-shop/static/css/main.1b7e4cd1.css.map",
-    "main.72250d1b.js.map": "/training-shop/static/js/main.72250d1b.js.map",
+    "main.59d910ac.css.map": "/training-shop/static/css/main.59d910ac.css.map",
+    "main.82c5499d.js.map": "/training-shop/static/js/main.82c5499d.js.map",
     "787.47ca6e30.chunk.js.map": "/training-shop/static/js/787.47ca6e30.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b7e4cd1.css",
-    "static/js/main.72250d1b.js"
+    "static/css/main.59d910ac.css",
+    "static/js/main.82c5499d.js"
   ]
 }
