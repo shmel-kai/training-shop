@@ -1,90 +1,262 @@
 .filter-wraper {
     max-width: 1110px;
     margin: 32px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @media (min-width: 641px) and (max-width: 1160px) {
+        margin: auto 5%;
+    }
 
-    button {
-        border: none;
-        background-color: white;
+    @media (min-width: 320px) and (max-width: 640px) {
+        margin: auto 5%;
+        flex-direction: column;
+    }
+
+    .wrap{
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        margin: 0;
-        padding: 0;
-        cursor: pointer;
-        
 
-    }
-
-    span {
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 15px;
-        letter-spacing: 0.06em;
-        opacity: 0.6;
-        text-transform: uppercase;
-
-    }
-
-    .filter-part {
-
-        .button-in-filter-part {
-
-            .filter {
-                width: 32px;
-                margin-right: 12px;
-            }
-
-            .filter-span {
-                font-size: 13px;
-                font-weight: 500;
-                line-height: 15px;
-                letter-spacing: 0.06em;
-                opacity: 0.6;
-        
-            }
-        }
-    }
-
-    .middle-part {
-        display: flex;
-
-            .menu-button {
-
-                .menu {
-                    width: 24px;
-                    height: 24px;
-                    margin-right: 6px;
-                }
-
-            }
-
-            .all-button {
-                .all {
-                    width: 24px;
-                    height: 24px;
-                    margin-left: 6px;
-                }
-            }
-    }
-
-    .bottom-part {
-
-        .button-in-bottom-part {
+        button {
+            border: none;
+            background-color: white;
             display: flex;
             align-items: center;
-            .span-best{
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            
+    
+        }
+    
+        span {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 15px;
+            letter-spacing: 0.06em;
+            opacity: 0.6;
+            text-transform: uppercase;
+    
+        }
+    
+        .filter-part {
+    
+            .button-in-filter-part {
+    
+                .filter {
+                    background-image: url(./filter.png);
+                    background-repeat: no-repeat;
+                    width: 32px;
+                    height: 32px;
+                    background-size: contain;
+                    margin-right: 12px;
+                }
 
+                .closeIcon {
+                    background-image: url(./closeIcon.png);
+                    background-repeat: no-repeat;
+                    width: 32px;
+                    height: 32px;
+                    background-size: contain;
+                    margin-right: 12px;
+                }
+    
+                .filter-span {
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 15px;
+                    letter-spacing: 0.06em;
+                    opacity: 0.6;
+            
+                }
+            }
+        }
+    
+        .middle-part {
+            display: flex;
+    
+                .menu-button {
+    
+                    .menu {
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 6px;
+                    }
+    
+                }
+    
+                .all-button {
+                    .all {
+                        width: 24px;
+                        height: 24px;
+                        margin-left: 6px;
+                    }
+                }
+        }
+    
+        .bottom-part {
+    
+            .button-in-bottom-part {
+                display: flex;
+                align-items: center;
+    
+                .arrow1 {
+                    width: 12px;
+                    height: 12px;
+                    margin-left: 4px;
+                }
+            }
+    
+        }
+    }
+    .hidden{
+        display: none;
+    }
+    .filter-block {
+        display: flex;
+        padding: 24px 42px 22px 42px;
+        justify-content: space-between;
+        background-color: #F8F8F8;
+        margin-top: 32px;
+        height: 240px;
+
+        @media (min-width: 320px) and (max-width: 640px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filter-categories {
+            text-align: left;
+            width: 234px;
+            @media (min-width: 641px) and (max-width: 1160px) {
+                
             }
 
-            .arrow1 {
-                width: 12px;
-                height: 12px;
-                margin-left: 4px;
+            
+        
+            
+
+            .filter-title {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 22px;
+                letter-spacing: 0.06em;
+                text-align: left;
+                text-transform: uppercase;
+            }
+
+            .filter-items {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 34px;
+                letter-spacing: 0em;
+                opacity: 0.8;
+                
+
+                .container {
+                    display: block;
+                    position: relative;
+                    padding-left: 28px;
+                    margin-bottom: 0px;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                      }
+                    
+                      .checkmark {
+                        position: absolute;
+                        top: 5px;
+                        left: 0;
+                        height: 18px;
+                        width: 18px;
+                        background-color: #fff;
+                        border: 1px solid #E5E5E5;
+
+                        
+                      }
+                        
+                }
+
+                /* On mouse-over, add a grey background color */
+                .container:hover input ~ .checkmark {
+                    background-color: lightgrey;
+                }
+                
+                /* When the checkbox is checked, add a blue background */
+                .container input:checked ~ .checkmark {
+                    background-color: #fff;
+                }
+                
+                /* Create the checkmark/indicator (hidden when not checked) */
+                .checkmark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+                
+                /* Show the checkmark when checked */
+                .container input:checked ~ .checkmark:after {
+                    display: block;
+                }
+                
+                /* Style the checkmark/indicator */
+                .container .checkmark:after {
+                    left: 7px;
+                    top: 2px;
+                    width: 4px;
+                    height: 9px;
+                    border: solid #121212;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                }
+
+
+                
+                
+                
             }
         }
 
+        .colors{
+            overflow: scroll;
+            .color{
+                border: none;
+                border-radius: 50%;
+            }
+
+            .black {
+                background-color: black !important;
+            }
+            .cyan{
+                background-color: #26BDB0 !important; 
+            }
+            .green{
+                background-color: #8FDB7B !important; 
+            }
+            .grey{
+                background-color: #C4C4C4!important; 
+            }
+            .pink{
+                background-color: #E74A8C !important; 
+            }
+            .white{
+                background-color:#FFFFFF !important; 
+            }
+            .blue{
+                background-color:#4095E3 !important; 
+            }
+        }
     }
    
 
