@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
+import { Rating } from '../Rating';
 import share from './share.png';
 import arrow from './arrow.png';
-import AstraY from './AstraY.png';
 import './styles.scss';
 
-const ProductTitle = ({previousPage, title}) => {
+const ProductTitle = ({previousPage, title, reviews, rating}) => {
     return (
         <div className='categories-block'>
             <div className='categories-wraper'>
@@ -26,12 +26,8 @@ const ProductTitle = ({previousPage, title}) => {
                 </div>
                 <div className='info'>
                     <div className='reviews'>
-                        <img className='astra' src={AstraY} alt='astra' />
-                        <img className='astra' src={AstraY} alt='astra' />
-                        <img className='astra' src={AstraY} alt='astra' />
-                        <img className='astra' src={AstraY} alt='astra' />
-                        <img className='astra' src={AstraY} alt='astra' />
-                        <span> 2 Reviews</span>
+                        <Rating activeStars={rating} size={14} />
+                        <span> {reviews} Reviews</span>
                     </div>
                     <div className='data-info'>
                         <div className='info-wraper'>

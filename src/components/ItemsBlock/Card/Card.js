@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'; //хук
 import './styles.scss';
-import Astra from './Asta.png';
-import AstraY from './AstraY.png';
+import { Rating } from '../../Rating';
 
 const Card = ({ data, type, itemId }) => {
     const navigateFunc = useNavigate();
@@ -16,16 +15,12 @@ const Card = ({ data, type, itemId }) => {
             onClick={onCardClick}
             data-test-id={`clothes-card-${type}`}
         >
-            <img src={data.img} alt='jeens'/>
+            <img src={`https://training.cleverland.by/shop${data.images[0]?.url}`} alt='jeens'/>
             <span className='name'>{data.name}</span>
             <div className='info'>
-                <span className='price'>{data.price}</span>
+                <span className='price'>$ {data.price}</span>
                 <div className='rating'>
-                    <img src={AstraY} alt='r'/>
-                    <img src={AstraY} alt='r'/>
-                    <img src={AstraY} alt='r'/>
-                    <img src={AstraY} alt='r'/>
-                    <img src={Astra} alt='r'/>
+                    <Rating activeStars={data.rating} size={14} />
                 </div>
             </div>
         </div>

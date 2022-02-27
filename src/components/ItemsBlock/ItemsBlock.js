@@ -1,7 +1,46 @@
 import './styles.scss'
 import { Card } from './Card/index';
+import { useState } from 'react';
 
-const ItemsBlock = ({ items, title, headerBlock = true, buttonAll = true, type }) => {
+const ARRIVALS_FLAG = 'isNewArrivals';
+const SPECIAL_FLAG = 'isSpecial';
+const BESTSELLER_FLAG = 'isBestseller';
+const VIEWED_FLAG = 'isMostViewed';
+const FEATURED_FLAG = 'isFeatured';
+
+const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, type }) => {
+    const [filters, setFilters] = useState([]);
+
+    const onItemsListClick = (tag) => {
+        if (!filters.includes(tag)) {
+            setFilters([...filters, tag]);
+        } else {
+            const tempArr = [...filters];
+            const index = tempArr.indexOf(tag);
+            tempArr.splice(index, 1);
+            setFilters(tempArr);
+        }
+    };
+
+    const filteredArray = products
+            .filter((item) => {
+            let isProductFits = false;
+
+            if (filters.length) {
+                filters.forEach((filter) => {
+                    if (item.particulars[filter]) {
+                        isProductFits = true;
+                    }
+                });
+            } else {
+                isProductFits = true;
+            }
+
+            return isProductFits;
+        })
+        .splice(0, 8);
+
+
     return (
         <div className='ItemsBlock-wraper' data-test-id={`clothes-${type}`}>
             {
@@ -12,11 +51,21 @@ const ItemsBlock = ({ items, title, headerBlock = true, buttonAll = true, type }
                         </div>
                         <nav className='ItemsBlock-nav'>
                             <ul className='ItemsBlock-list'>
-                                <li>NEW ARRIVALS</li>
-                                <li>SPECIALS</li>
-                                <li>BESTSELLERS</li>
-                                <li>MOST VIEWED</li>
-                                <li>FEATURED PRODUCTS</li>
+                                <li onClick={() => onItemsListClick(ARRIVALS_FLAG)}>
+                                    NEW ARRIVALS
+                                </li>
+                                <li onClick={() => onItemsListClick(SPECIAL_FLAG)}>
+                                    SPECIALS
+                                </li>
+                                <li onClick={() => onItemsListClick(BESTSELLER_FLAG)}>
+                                    BESTSELLERS
+                                </li>
+                                <li onClick={() => onItemsListClick(VIEWED_FLAG)}>
+                                    MOST VIEWED
+                                </li>
+                                <li onClick={() => onItemsListClick(FEATURED_FLAG)}>
+                                    FEATURED PRODUCTS
+                                </li>
                             </ul>
                         </nav>       
                     </div>
@@ -24,7 +73,16 @@ const ItemsBlock = ({ items, title, headerBlock = true, buttonAll = true, type }
             }
             <div className='card-block'>
                 {
-                    items.map((item, index) => <Card itemId={index + 1} key={item.id} data={item} data-test-id={`clothes-card-${type}`} type={type} />)
+
+                    filteredArray.map((item, index) => (
+                        <Card 
+                            itemId={index + 1} 
+                            key={item.id} 
+                            data={item} 
+                            data-test-id={`clothes-card-${type}`} 
+                            type={type} 
+                        />
+                    ))
                 }
             </div>
             {

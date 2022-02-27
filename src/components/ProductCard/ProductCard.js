@@ -1,20 +1,14 @@
 import { Rating } from '../Rating';
 import { Review } from '../Review';
 import { RelatedProducts } from '../RelatedProducts'
-import { meta } from '../RelatedProducts/meta';
 import { useRef } from 'react';
 
 import './styles.scss';
 
-import photo5 from './photo5.jpeg';
 import leftArrow from './leftArrow.png';
 import rightArrow from './rightArrow.png';
 import Heart from './assets/heart.png';
 import Scale from './assets/scale.png';
-import img1 from './assets/img1.jpeg';
-import img2 from './assets/img2.jpeg';
-import img3 from './assets/img3.jpeg';
-import img4 from './assets/img4.jpeg';
 import refresh from './assets/refresh.png';
 import mail from './assets/mail.png';
 import truck from './assets/truck.png';
@@ -36,15 +30,25 @@ import 'swiper/css/controller';
 
 import { useState } from 'react';
 
-import { metaSwiper } from './metaSwiper';
 
-
-const ProductCard = () => {
+const ProductCard = ({ productData, allProducts }) => {
     const [currentItemIndex, setCurrentItemIndex] = useState(0);
+    const [colorIndex, setColorIndex] = useState(0);
     const swiperRef = useRef(null);
+
 
     const onNextControlClick = () => swiperRef.current?.swiper.slideNext();
     const onPrevControlClick = () => swiperRef.current?.swiper.slidePrev();
+    const onColorClick = (index) => setColorIndex(index);
+
+    const colorArray = productData.images.reduce((acc, curr) => {
+        const colorsArray = acc.map((element) => element.color);
+        if (!colorsArray.includes(curr.color)) {
+            acc.push(curr);
+        }
+        return acc;
+    }, []);
+
 
     return (
         <div>
@@ -57,11 +61,11 @@ const ProductCard = () => {
                         </div>
 
                         {
-                            metaSwiper.map((element, index) => (
+                            productData.images.map((element, index) => (
                                 <img 
                                     key={element.id}
                                     className={`image ${currentItemIndex === index ? '' : 'disable'}`}  
-                                    src={element.img} 
+                                    src={`https://training.cleverland.by/shop${productData.images[index]?.url}`}
                                     alt='product' 
                                 />
                             )) 
@@ -76,18 +80,18 @@ const ProductCard = () => {
                             onSlideChange={(event) => setCurrentItemIndex(event.realIndex)}
                             data-test-id="product-slider"
                         >
-                            <SwiperSlide>
-                                <img className='big-image' src={photo5} alt='product' />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img className='big-image' src={photo5} alt='product' />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img className='big-image' src={photo5} alt='product' />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img className='big-image' src={photo5} alt='product' />
-                            </SwiperSlide>
+                            {
+                                productData.images.map((element, index) => (
+                                    <SwiperSlide>
+                                        <img 
+                                            key={element.id}
+                                            className='big-image' 
+                                            src={`https://training.cleverland.by/shop${productData.images[index]?.url}`}
+                                            alt='product' 
+                                         />
+                                    </SwiperSlide>
+                                )) 
+                            }  
                         </Swiper>                
                     </div>
                 </div>
@@ -95,13 +99,27 @@ const ProductCard = () => {
                     <div className='color-block'>
                         <div className='title'>
                             <span className='key'>Color:</span>
-                            <span className='value'>Blue</span>
+                                
+                                        <span 
+                                            className='value' 
+                                            alt='product' 
+                                        >
+                                            {colorArray[colorIndex].color} 
+                                        </span>
+                                 
                         </div>
                         <div className='all-colors'>
-                            <img src={img1} alt='blue' />
-                            <img src={img2} alt='blue' />
-                            <img src={img3} alt='blue' />
-                            <img src={img4} alt='blue' />
+                            {
+                                colorArray.map((element, index) => (
+                                    <img 
+                                        onClick={() => onColorClick(index)}
+                                        key={element.id}
+                                        className={element.color}  
+                                        src={`https://training.cleverland.by/shop${element?.url}`}
+                                        alt='product' 
+                                    />
+                                )) 
+                            }
                         </div>
                     </div>
                     <div className='size-block'>
@@ -193,7 +211,7 @@ const ProductCard = () => {
                     </div>     
                 </div>
             </div>
-            <RelatedProducts meta={meta} />
+            <RelatedProducts meta={productData} allProducts={allProducts} />
         </div>
         
     )

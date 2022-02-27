@@ -1,7 +1,8 @@
 import { Header } from '../components/Header';
 import { CategoriesTitle  } from '../components/CategoriesTitle';
 import { ItemsBlock } from '../components/ItemsBlock';
-import { items } from '../metadata/items';
+import PRODUCTS from '../metadata/products.json';
+
 import { Filter } from '../components/Filter';
 import { Loading } from '../components/Loading';
 
@@ -13,7 +14,12 @@ function Men( ) {
         <Header />
         <CategoriesTitle title="Men"/>
         <Filter />
-        <ItemsBlock type="men" items={items.men} title="MEN’S" headerBlock={false} buttonAll={false}/>
+        <ItemsBlock type="men" 
+          products={PRODUCTS.men} 
+          title="MEN’S" 
+          headerBlock={false} 
+          buttonAll={false}
+        />
         <Loading />
         <Footer />
       </div>
