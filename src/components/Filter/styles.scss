@@ -1,6 +1,7 @@
 .filter-wraper {
     max-width: 1110px;
     margin: 32px auto;
+
     @media (min-width: 641px) and (max-width: 1160px) {
         margin: auto 5%;
     }
@@ -116,7 +117,7 @@
         justify-content: space-between;
         background-color: #F8F8F8;
         margin-top: 32px;
-        height: 272px;
+        flex-wrap: wrap;
 
         @media (min-width: 320px) and (max-width: 640px) {
             display: flex;
@@ -128,6 +129,7 @@
         .filter-categories {
             text-align: left;
             width: 234px;
+            height: 240px;
             overflow: scroll;
             @media (min-width: 641px) and (max-width: 1160px) {
                 
@@ -227,6 +229,10 @@
                 
                 
             }
+        }
+
+        .filter-categories:not(:last-child) {
+            margin-bottom: 30px;
         }
 
         .colors{

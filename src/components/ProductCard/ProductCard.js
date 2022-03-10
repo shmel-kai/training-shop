@@ -1,7 +1,7 @@
 import { Rating } from '../Rating';
 import { Review } from '../Review';
 import { RelatedProducts } from '../RelatedProducts'
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 import './styles.scss';
 
@@ -50,7 +50,13 @@ const ProductCard = ({ productData, allProducts }) => {
     const onPrevControlClick = () => swiperRef.current?.swiper.slidePrev();
     const onColorClick = (index) => setColorIndex(index);
     const onSizeClick = (index) => setSizeIndex(index);
-    
+
+    useEffect(() => {
+        setCurrentItemIndex(0);
+        setColorIndex(0);
+        setSizeIndex(0);
+        window.scrollTo(0, 0);
+    }, [productData.id]);
     
 
     const colorArray = productData.images.reduce((acc, curr) => {
@@ -184,7 +190,7 @@ const ProductCard = ({ productData, allProducts }) => {
                                             className='value' 
                                             alt='product' 
                                         >
-                                            {colorArray[colorIndex].color} 
+                                            {colorArray[colorIndex]?.color} 
                                         </span>
                                  
                         </div>

@@ -1,5 +1,6 @@
-import { Card } from './Card/index';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Card } from './Card/index';
 
 import './styles.scss';
 
@@ -21,6 +22,13 @@ const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, typ
             return true;
         })
         .splice(0, 20);
+
+    const navigateFunc = useNavigate();
+    const onSeeAll = (event) => {
+        event.preventDefault();
+        navigateFunc(`/${type}`);
+        window.scrollTo(0, 0);
+    };
 
 
     return (
@@ -90,7 +98,9 @@ const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, typ
             {
                 buttonAll && (
                     <div className='button-wraper'>
-                        <button className='all-items'>SEE ALL</button>
+                        <button className='all-items' onClick={onSeeAll}>
+                            SEE ALL
+                        </button>
                     </div>
                     
                 )
