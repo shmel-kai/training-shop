@@ -29,6 +29,10 @@
         .ItemsBlock-list{
             display: flex;
 
+            .active {
+                font-weight: bold;
+            }
+
             @media (min-width: 641px) and (max-width: 1160px) {
                 display: flex;
                 align-items: center;
