@@ -69,7 +69,9 @@ const Filter = ({
                 <div className='filter-part'>
                     <button 
                         onClick={onFilterClick}
-                        className='button-in-filter-part'>
+                        className='button-in-filter-part'
+                        data-test-id="filter-button"
+                    >
                         <div className={isFilterOpen ? 'closeIcon' : 'filter'}></div>
                         <span className='filter-span'>Filter</span>
                     </button>
@@ -89,10 +91,13 @@ const Filter = ({
                     </button>
                 </div>
             </div>
-            <div className={isFilterOpen ? 'filter-block' : 'hidden'}>
+            <div 
+                className={isFilterOpen ? 'filter-block' : 'hidden'}
+                data-test-id={`filters-${type}`}
+            >
                 <div className='filter-categories colors'>
                     <span className='filter-title'>Color</span>
-                    <div className='filter-items'>
+                    <div className='filter-items' data-test-id="filters-color">
                         {
                             uniqueColors.map(color => (
                                 <label 
@@ -102,6 +107,7 @@ const Filter = ({
                                         event.preventDefault();
                                         setColorFilter(color);
                                     }}
+                                    data-test-id={`filter-color-${color}`}
                                 >
                                     <input type="checkbox" checked={colorFilters.includes(color)} readOnly />
                                     <span className='checkmark color' />
@@ -114,7 +120,7 @@ const Filter = ({
                 </div>
                 <div className='filter-categories'>
                     <span className='filter-title'>Size</span>
-                    <div className='filter-items'>
+                    <div className='filter-items' data-test-id="filters-size">
                         {
                             uniqueSizes.map(size => (
                                 <label 
@@ -124,6 +130,7 @@ const Filter = ({
                                         event.preventDefault();
                                         setSizeFilter(size);
                                     }}
+                                    data-test-id={`filter-size-${size}`}
                                 >
                                     <input type="checkbox" checked={sizeFilters.includes(size)} readOnly />
                                     <span className='checkmark' />
@@ -136,7 +143,7 @@ const Filter = ({
                 </div>
                 <div className='filter-categories'>
                     <span className='filter-title'>Brand</span>
-                    <div className='filter-items'>
+                    <div className='filter-items' data-test-id="filters-brand">
                         {
                             uniqueBrands.map(brand => (
                                 <label 
@@ -146,6 +153,7 @@ const Filter = ({
                                         event.preventDefault();
                                         setBrandFilter(brand);
                                     }}
+                                    data-test-id={`filter-brand-${brand}`}
                                 >
                                     <input type="checkbox" checked={brandFilters.includes(brand)} readOnly />
                                     <span className='checkmark' />
@@ -158,7 +166,7 @@ const Filter = ({
                 </div>
                 <div className='filter-categories'>
                     <span className='filter-title'>Price</span>
-                    <div className='filter-items'>
+                    <div className='filter-items' data-test-id="filters-price">
                         {
                             prices.map(price => (
                                 <label 
@@ -168,6 +176,7 @@ const Filter = ({
                                         event.preventDefault();
                                         setPriceFilter(price);
                                     }}
+                                    data-test-id={`filter-price-${price}`}
                                 >
                                     <input type="checkbox" checked={priceFilters.some(item => item.from === price.from)} readOnly />
                                     <span className='checkmark'></span>

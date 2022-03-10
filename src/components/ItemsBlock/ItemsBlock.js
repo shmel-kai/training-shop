@@ -34,30 +34,35 @@ const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, typ
                         <nav className='ItemsBlock-nav'>
                             <ul className='ItemsBlock-list'>
                                 <li 
+                                    data-test-id={`clothes-${type}-${ARRIVALS_FLAG}`}
                                     className={currentItem === ARRIVALS_FLAG ? 'active' : ''}
                                     onClick={() => setCurrentItem(ARRIVALS_FLAG)}
                                 >
                                     NEW ARRIVALS
                                 </li>
                                 <li 
+                                    data-test-id={`clothes-${type}-${SPECIAL_FLAG}`}
                                     className={currentItem === SPECIAL_FLAG ? 'active' : ''}
                                     onClick={() => setCurrentItem(SPECIAL_FLAG)}
                                 >
                                     SPECIALS
                                 </li>
                                 <li 
+                                    data-test-id={`clothes-${type}-${BESTSELLER_FLAG}`}
                                     className={currentItem === BESTSELLER_FLAG ? 'active' : ''}
                                     onClick={() => setCurrentItem(BESTSELLER_FLAG)}
                                 >
                                     BESTSELLERS
                                 </li>
                                 <li 
+                                    data-test-id={`clothes-${type}-${VIEWED_FLAG}`}
                                     className={currentItem === VIEWED_FLAG ? 'active' : ''}
                                     onClick={() => setCurrentItem(VIEWED_FLAG)}
                                 >
                                     MOST VIEWED
                                 </li>
                                 <li 
+                                    data-test-id={`clothes-${type}-${FEATURED_FLAG}`}
                                     className={currentItem === FEATURED_FLAG ? 'active' : ''}
                                     onClick={() => setCurrentItem(FEATURED_FLAG)}
                                 >
