@@ -109,9 +109,8 @@ const Filter = ({
                                                 event.preventDefault();
                                                 setColorFilter(color);
                                             }}
-                                            data-test-id={`filter-color-${color}`}
                                         >
-                                            <input type="checkbox" checked={colorFilters.includes(color)} readOnly />
+                                            <input type="checkbox" checked={colorFilters.includes(color)} readOnly data-test-id={`filter-color-${color}`} />
                                             <span className='checkmark color' />
                                                 {color}
                                         </label>
@@ -132,9 +131,8 @@ const Filter = ({
                                                 event.preventDefault();
                                                 setSizeFilter(size);
                                             }}
-                                            data-test-id={`filter-size-${size}`}
                                         >
-                                            <input type="checkbox" checked={sizeFilters.includes(size)} readOnly />
+                                            <input type="checkbox" checked={sizeFilters.includes(size)} readOnly data-test-id={`filter-size-${size}`} />
                                             <span className='checkmark' />
                                                 {size}
                                         </label>
@@ -155,9 +153,13 @@ const Filter = ({
                                                 event.preventDefault();
                                                 setBrandFilter(brand);
                                             }}
-                                            data-test-id={`filter-brand-${brand}`}
                                         >
-                                            <input type="checkbox" checked={brandFilters.includes(brand)} readOnly />
+                                            <input 
+                                                type="checkbox" 
+                                                checked={brandFilters.includes(brand)} 
+                                                readOnly
+                                                data-test-id={`filter-brand-${brand}`}
+                                            />
                                             <span className='checkmark' />
                                             {brand}
                                         </label>
@@ -178,9 +180,8 @@ const Filter = ({
                                                 event.preventDefault();
                                                 setPriceFilter(price);
                                             }}
-                                            data-test-id={`filter-price-${price}`}
                                         >
-                                            <input type="checkbox" checked={priceFilters.some(item => item.from === price.from)} readOnly />
+                                            <input type="checkbox" checked={priceFilters.some(item => item.from === price.from)} readOnly data-test-id={`filter-price-${price}`} />
                                             <span className='checkmark'></span>
                                                 {`$${price.from}${price.to ? `-$${price.to}` : '+'}`}
                                         </label>
