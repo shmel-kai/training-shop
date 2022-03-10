@@ -4,7 +4,8 @@ import { Rating } from '../Rating';
 const Review = ( {
     name='Ivan Ivanov',
     time='3 months ago',
-    content='good'
+    content='good',
+    activeStars
 }) => {
     return (
         <div className='review-container'>
@@ -12,7 +13,7 @@ const Review = ( {
                 <div className='name'>{name}</div>
                 <div className='more-info'>
                     <div className='time'>{time}</div>
-                    <Rating size={14} activeStars={5} />
+                    <Rating size={14} activeStars={activeStars} />
                 </div>
             </div>
             <div className='content'>{content}</div>

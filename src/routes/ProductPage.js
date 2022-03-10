@@ -8,7 +8,6 @@ import PRODUCTS from './../metadata/products.json';
 function ProductPage() {
     // const { state: productData } = useLocation();
     const productData = useLocation().state;
-    console.log('productData', productData)
 
     return (
       <div className="App" data-test-id={`product-page-${productData.category}`}>

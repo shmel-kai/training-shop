@@ -14,10 +14,10 @@ import 'swiper/css';
 import 'swiper/css/controller';
 
 
-const RelatedProducts = ({ meta, allProducts }) => {
+const RelatedProducts = ({ allProducts }) => {
     const navigationPrevRef = useRef(null)
     const navigationNextRef = useRef(null)
-    console.log('meta', meta)
+    
 
     return (
         <div className='products-wraper'>
@@ -55,7 +55,7 @@ const RelatedProducts = ({ meta, allProducts }) => {
                             allProducts.map((element, index) => (
                                 <SwiperSlide key={`${element.id}_${index}`}>
                                     <Card 
-                                        itemId={index + 1}  
+                                        itemId={element.id}  
                                         data={element} 
                                         data-test-id="clothes-card-women" 
                                         type="women" 

@@ -43,14 +43,14 @@
         .all-img {
             display: flex;
             flex-direction: column;
+            width: 94px;
 
             @media (min-width: 641px) and (max-width: 1160px) {
                 margin-right: 5%;
             }
         
             @media (min-width: 320px) and (max-width: 640px) {
-                flex-direction: row;
-                justify-content: space-between;
+                display: none;
             }
 
             .switch-block {
@@ -58,49 +58,77 @@
                 align-items: center;
                 justify-content: space-around;
                 padding-bottom: 8px;
-                
+                width: 94px;
 
+                @media (min-width: 320px) and (max-width: 640px) {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
 
                 .up-arrow {
                     width: 40px;
                     transform: rotate(90deg);
-                    @media (min-width: 320px) and (max-width: 640px) {
-                        transform: rotate(0deg);
-                    }
                     cursor: pointer;
+                    display: block;
                 }
 
                 .down-arrow {
                     width: 40px;
                     transform: rotate(90deg);
-                    @media (min-width: 320px) and (max-width: 640px) {
-                        transform: rotate(0deg);
-                    }
                     cursor: pointer;
+                    display: block;
                 }
             }
 
-            .image {
-                width: 94px;
-                padding-bottom: 15px;
+            .left-swiper {
+                width: 100px;
+                margin: 0;
+                height: 500px;
 
-                @media (min-width: 320px) and (max-width: 640px) {
-                   width: 20%; 
+                .swiper-wrapper{
+                    height: 100px;
+                    
+                    .swiper-slide-active{
+                        height: 100px;
+                    }
+
+                    .swiper-slide-next{
+                        height: 100px;
+                    }
+
+
+                    .swiper-slide{
+                        height: 100px;
+
+                        
+
+                        .image {
+                            width: 94px;
+                            padding-bottom: 15px;
+            
+                        
+            
+                            // &:last-child {
+                            //     padding-bottom: 0;
+                            // }
+                        }
+
+                        .disable {
+                            opacity: 0.6;
+                        }
+                    }
                 }
-
-                // &:last-child {
-                //     padding-bottom: 0;
-                // }
             }
-
-            .disable {
-                opacity: 0.6;
-            }
-        }
+        }       
+    }
 
         .big-photo {
             display: flex;
             max-width: 453px;
+            
+            height: fit-content;
+             
 
             @media (min-width: 641px) and (max-width: 1160px) {
                 margin-left: 5%;
@@ -118,8 +146,7 @@
                     position: absolute;
                     width: 40px;
                     height: 40px;
-                    left: 24px;
-                    background-image: url('./leftArrow.png');
+                    left: 50px;
                     background-repeat: no-repeat;
                     background-size: 40px;
         
@@ -132,8 +159,7 @@
                     position: absolute;
                     width: 40px;
                     height: 40px;
-                    right: 28px;
-                    background-image: url('./rightArrow.png');
+                    right: 50px;
                     background-repeat: no-repeat;
                     background-size: 40px;
         
@@ -141,50 +167,13 @@
                         display: none;
                     }
                 }
-            }
-
-            
-
-            div{
-                position: relative; 
-                height: 560px;
-
-                @media (min-width: 320px) and (max-width: 640px) {
-                    margin-left: 0%;
-                    width: 100%;
-                    height: auto;
-                    display: flex;
-                    align-items: center;
-                }
-
-                .big-image {
-                    width: 448px;
+                .big-image{
+                    width: auto;
                     height: 560px;
-
-                    @media (min-width: 320px) and (max-width: 640px) {
-                        width: 100%;
-                        height: auto;
-                    }
                 }
-    
-                .left-arrow {
-                    width: 40px;
-                    position: absolute;
-                    top: calc(50% - 20px);
-                    right: calc(90% - 20px);
-                }
-    
-                .right-arrow {
-                    width: 40px;
-                    position: absolute;
-                    top: calc(50% - 20px);
-                    right: calc(10% - 20px);
-                }
-            }
-            
-            
+            }  
         }
-    }
+    
 
     .right-section {
         width: 49.5%;
@@ -237,13 +226,19 @@
                     flex-direction: row;
                 }
                 img{
+                    
                     width: 64px;
-                    margin-right: 27px; 
+                    height: 64px;
+                    margin-right: 27px;
+                    object-fit: cover;
             
                     @media (min-width: 320px) and (max-width: 640px) {
                         margin-right: 5%;
                     
                     }
+                }
+                .chosen-color{
+                    border: 2px solid #121212;
                 }
             }
         }
@@ -278,16 +273,17 @@
                     border: none;
                     border-radius: none;
                     background-color: #F8F8F8;
-                    width: 40px;
+                    width: auto;
                     height: 40px;
                     margin-right: 16px;
                     margin-bottom: 12px;
                     cursor: pointer;
                 }
-                .button:focus {
+                .chosen-size{
                     border: 2px solid #121212;
                     background-color: white;
                 }
+                
             }
             .sizeGuide {
                 display: block;

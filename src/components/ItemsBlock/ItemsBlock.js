@@ -76,7 +76,7 @@ const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, typ
 
                     filteredArray.map((item, index) => (
                         <Card 
-                            itemId={index + 1} 
+                            itemId={item.id} 
                             key={item.id} 
                             data={item} 
                             data-test-id={`clothes-card-${type}`} 

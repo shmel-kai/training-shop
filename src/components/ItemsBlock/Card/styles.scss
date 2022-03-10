@@ -1,4 +1,5 @@
 .card-wraper{
+    position: relative;
     width: 255px;
     display: flex;
     flex-direction: column;
@@ -7,6 +8,26 @@
 
     @media (min-width: 641px) and (max-width: 1160px) {
         margin-left: 20px;
+    }
+
+    .discount-block {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        width: 53px;
+        height: 31px;
+        background-color: #E91E63;
+        top: 0px;
+        
+        .discount {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 13px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: #ffff;
+        }
     }
 
     .name{

@@ -9,6 +9,8 @@ const Card = ({ data, type, itemId }) => {
         // по клику открывается страница карточки и переносятся данные с метадата
     }; 
 
+    const isDiscount = data.discount;
+
     return (
         <div 
             className='card-wraper'
@@ -22,6 +24,13 @@ const Card = ({ data, type, itemId }) => {
                 <div className='rating'>
                     <Rating activeStars={data.rating} size={14} />
                 </div>
+                {
+                    isDiscount && (
+                        <div className='discount-block'>
+                            <span className='discount'>{isDiscount}</span>
+                        </div>
+                    )
+                }
             </div>
         </div>
         
