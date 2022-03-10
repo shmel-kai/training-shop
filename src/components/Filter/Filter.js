@@ -91,102 +91,106 @@ const Filter = ({
                     </button>
                 </div>
             </div>
-            <div 
-                className={isFilterOpen ? 'filter-block' : 'hidden'}
-                data-test-id={`filters-${type}`}
-            >
-                <div className='filter-categories colors'>
-                    <span className='filter-title'>Color</span>
-                    <div className='filter-items' data-test-id="filters-color">
-                        {
-                            uniqueColors.map(color => (
-                                <label 
-                                    className='container' 
-                                    key={color}
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        setColorFilter(color);
-                                    }}
-                                    data-test-id={`filter-color-${color}`}
-                                >
-                                    <input type="checkbox" checked={colorFilters.includes(color)} readOnly />
-                                    <span className='checkmark color' />
-                                        {color}
-                                </label>
-                            ))
-                        }
+            {
+                isFilterOpen && (
+                    <div 
+                        className={isFilterOpen ? 'filter-block' : 'hidden'}
+                        data-test-id={`filters-${type}`}
+                    >
+                        <div className='filter-categories colors'>
+                            <span className='filter-title'>Color</span>
+                            <div className='filter-items' data-test-id="filters-color">
+                                {
+                                    uniqueColors.map(color => (
+                                        <label 
+                                            className='container' 
+                                            key={color}
+                                            onClick={(event) => {
+                                                event.preventDefault();
+                                                setColorFilter(color);
+                                            }}
+                                            data-test-id={`filter-color-${color}`}
+                                        >
+                                            <input type="checkbox" checked={colorFilters.includes(color)} readOnly />
+                                            <span className='checkmark color' />
+                                                {color}
+                                        </label>
+                                    ))
+                                }
+                            </div>
+                        
+                        </div>
+                        <div className='filter-categories'>
+                            <span className='filter-title'>Size</span>
+                            <div className='filter-items' data-test-id="filters-size">
+                                {
+                                    uniqueSizes.map(size => (
+                                        <label 
+                                            className='container' 
+                                            key={size}
+                                            onClick={(event) => {
+                                                event.preventDefault();
+                                                setSizeFilter(size);
+                                            }}
+                                            data-test-id={`filter-size-${size}`}
+                                        >
+                                            <input type="checkbox" checked={sizeFilters.includes(size)} readOnly />
+                                            <span className='checkmark' />
+                                                {size}
+                                        </label>
+                                    ))
+                                }
+                            </div>
+                        
+                        </div>
+                        <div className='filter-categories'>
+                            <span className='filter-title'>Brand</span>
+                            <div className='filter-items' data-test-id="filters-brand">
+                                {
+                                    uniqueBrands.map(brand => (
+                                        <label 
+                                            className='container' 
+                                            key={brand}
+                                            onClick={(event) => {
+                                                event.preventDefault();
+                                                setBrandFilter(brand);
+                                            }}
+                                            data-test-id={`filter-brand-${brand}`}
+                                        >
+                                            <input type="checkbox" checked={brandFilters.includes(brand)} readOnly />
+                                            <span className='checkmark' />
+                                            {brand}
+                                        </label>
+                                    ))
+                                }
+                            </div>
+                        
+                        </div>
+                        <div className='filter-categories'>
+                            <span className='filter-title'>Price</span>
+                            <div className='filter-items' data-test-id="filters-price">
+                                {
+                                    prices.map(price => (
+                                        <label 
+                                            className='container'
+                                            key={price.from}
+                                            onClick={(event) => {
+                                                event.preventDefault();
+                                                setPriceFilter(price);
+                                            }}
+                                            data-test-id={`filter-price-${price}`}
+                                        >
+                                            <input type="checkbox" checked={priceFilters.some(item => item.from === price.from)} readOnly />
+                                            <span className='checkmark'></span>
+                                                {`$${price.from}${price.to ? `-$${price.to}` : '+'}`}
+                                        </label>
+                                    ))
+                                }
+                            </div>
+                        </div>
                     </div>
-                
-                </div>
-                <div className='filter-categories'>
-                    <span className='filter-title'>Size</span>
-                    <div className='filter-items' data-test-id="filters-size">
-                        {
-                            uniqueSizes.map(size => (
-                                <label 
-                                    className='container' 
-                                    key={size}
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        setSizeFilter(size);
-                                    }}
-                                    data-test-id={`filter-size-${size}`}
-                                >
-                                    <input type="checkbox" checked={sizeFilters.includes(size)} readOnly />
-                                    <span className='checkmark' />
-                                        {size}
-                                </label>
-                            ))
-                        }
-                    </div>
-                
-                </div>
-                <div className='filter-categories'>
-                    <span className='filter-title'>Brand</span>
-                    <div className='filter-items' data-test-id="filters-brand">
-                        {
-                            uniqueBrands.map(brand => (
-                                <label 
-                                    className='container' 
-                                    key={brand}
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        setBrandFilter(brand);
-                                    }}
-                                    data-test-id={`filter-brand-${brand}`}
-                                >
-                                    <input type="checkbox" checked={brandFilters.includes(brand)} readOnly />
-                                    <span className='checkmark' />
-                                    {brand}
-                                </label>
-                            ))
-                        }
-                    </div>
-                
-                </div>
-                <div className='filter-categories'>
-                    <span className='filter-title'>Price</span>
-                    <div className='filter-items' data-test-id="filters-price">
-                        {
-                            prices.map(price => (
-                                <label 
-                                    className='container'
-                                    key={price.from}
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        setPriceFilter(price);
-                                    }}
-                                    data-test-id={`filter-price-${price}`}
-                                >
-                                    <input type="checkbox" checked={priceFilters.some(item => item.from === price.from)} readOnly />
-                                    <span className='checkmark'></span>
-                                        {`$${price.from}${price.to ? `-$${price.to}` : '+'}`}
-                                </label>
-                            ))
-                        }
-                    </div>
-                </div>
-            </div>
+                )
+            }
             {
                 !!isFiltersApplied && (
                     <div className="filters-info-container">

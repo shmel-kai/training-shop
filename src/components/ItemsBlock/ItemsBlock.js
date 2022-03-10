@@ -20,7 +20,7 @@ const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, typ
 
             return true;
         })
-        .splice(0, 8);
+        .splice(0, 20);
 
 
     return (
