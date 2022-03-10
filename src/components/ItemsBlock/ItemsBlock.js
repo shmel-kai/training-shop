@@ -10,7 +10,7 @@ const VIEWED_FLAG = 'isMostViewed';
 const FEATURED_FLAG = 'isFeatured';
 
 const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, type }) => {
-    const [currentItem, setCurrentItem] = useState(null);
+    const [currentItem, setCurrentItem] = useState(ARRIVALS_FLAG);
 
     const filteredArray = products
         .filter((product) => {
