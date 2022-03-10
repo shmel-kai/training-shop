@@ -22,6 +22,14 @@ const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, typ
         })
         .splice(0, 20);
 
+    const setItem = item => {
+        if (currentItem === item) {
+            setCurrentItem(null);
+        } else {
+            setCurrentItem(item);
+        }
+    }
+
 
     return (
         <div className='ItemsBlock-wraper' data-test-id={`clothes-${type}`}>
@@ -36,35 +44,35 @@ const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, typ
                                 <li 
                                     data-test-id={`clothes-${type}-${ARRIVALS_FLAG}`}
                                     className={currentItem === ARRIVALS_FLAG ? 'active' : ''}
-                                    onClick={() => setCurrentItem(ARRIVALS_FLAG)}
+                                    onClick={() => setItem(ARRIVALS_FLAG)}
                                 >
                                     NEW ARRIVALS
                                 </li>
                                 <li 
                                     data-test-id={`clothes-${type}-${SPECIAL_FLAG}`}
                                     className={currentItem === SPECIAL_FLAG ? 'active' : ''}
-                                    onClick={() => setCurrentItem(SPECIAL_FLAG)}
+                                    onClick={() => setItem(SPECIAL_FLAG)}
                                 >
                                     SPECIALS
                                 </li>
                                 <li 
                                     data-test-id={`clothes-${type}-${BESTSELLER_FLAG}`}
                                     className={currentItem === BESTSELLER_FLAG ? 'active' : ''}
-                                    onClick={() => setCurrentItem(BESTSELLER_FLAG)}
+                                    onClick={() => setItem(BESTSELLER_FLAG)}
                                 >
                                     BESTSELLERS
                                 </li>
                                 <li 
                                     data-test-id={`clothes-${type}-${VIEWED_FLAG}`}
                                     className={currentItem === VIEWED_FLAG ? 'active' : ''}
-                                    onClick={() => setCurrentItem(VIEWED_FLAG)}
+                                    onClick={() => setItem(VIEWED_FLAG)}
                                 >
                                     MOST VIEWED
                                 </li>
                                 <li 
                                     data-test-id={`clothes-${type}-${FEATURED_FLAG}`}
                                     className={currentItem === FEATURED_FLAG ? 'active' : ''}
-                                    onClick={() => setCurrentItem(FEATURED_FLAG)}
+                                    onClick={() => setItem(FEATURED_FLAG)}
                                 >
                                     FEATURED PRODUCTS
                                 </li>
