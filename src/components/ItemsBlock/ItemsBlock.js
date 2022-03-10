@@ -14,7 +14,7 @@ const ItemsBlock = ({ products, title, headerBlock = true, buttonAll = true, typ
 
     const filteredArray = products
         .filter((product) => {
-            if (currentItem) {
+            if (currentItem && headerBlock) {
                 return product.particulars[currentItem]
             }
 
