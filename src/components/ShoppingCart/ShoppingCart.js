@@ -62,7 +62,7 @@ const ShoppingCart = () => {
                         <div className='shoppingCart-content-wraper'>
                             <div className='top-wraper'>
                                 <div className='shoppingCart-content'>
-                                    <div className='shoppingCart-menu q'>
+                                    <div className='shoppingCart-menu ty'>
                                         <span>Item in Cart</span>
                                         <img className='slash' src={Slash} alt="slash" />
                                         <span>Delivery Info</span>
