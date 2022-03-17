@@ -43,7 +43,7 @@ const ShoppingCart = () => {
         }
     }, [isCartOpen])
 
-    return (
+    return isCartOpen && (
         <div className={`${isCartOpen ? 'cart-block-wraper' : 'disabled'}`}>
             <div onClick={onCartClick} className={`${isCartOpen ? 'blur-window' : 'disabled'}`}>
             </div>
@@ -124,8 +124,6 @@ const ShoppingCart = () => {
                 }
             </div>
         </div>
-
-        
     )
 
 };
