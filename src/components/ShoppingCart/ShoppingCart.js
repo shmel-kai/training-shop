@@ -44,7 +44,7 @@ const ShoppingCart = () => {
     }, [isCartOpen])
 
     return isCartOpen && (
-        <div className={`${isCartOpen ? 'cart-block-wraper' : 'disabled'}`}>
+        <div data-test-id='cart' className={`${isCartOpen ? 'cart-block-wraper' : 'disabled'}`}>
             <div onClick={onCartClick} className={`${isCartOpen ? 'blur-window' : 'disabled'}`}>
             </div>
             <div className='shoppingCart-wraper'>

@@ -72,7 +72,7 @@ const Header = () => {
         <header 
         onClick={outsideClickListner}
         className="header" data-test-id="header">
-            <ShoppingCart data-test-id='cart'></ShoppingCart>
+            <ShoppingCart></ShoppingCart>
             <div className="info-container">
                 <div className="info">
                     <div className="contacts">
