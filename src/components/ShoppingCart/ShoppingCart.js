@@ -9,10 +9,7 @@ import { useEffect } from 'react';
 import { changeQuantity } from '../../redux/action';
 import { toggleCart } from '../../redux/action';
 
-const ShoppingCart = () => {
-
-
-   
+const ShoppingCart = () => { 
 
     const dispatch = useDispatch();
     const orders = useSelector(store => store.orders);
