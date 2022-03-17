@@ -4,7 +4,7 @@ import Slash from './slash.png';
 import Trash from './trash.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearOrders } from '../../redux/action';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { changeQuantity } from '../../redux/action';
 import { toggleCart } from '../../redux/action';
