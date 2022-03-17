@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { Rating } from '../Rating';
 import { Review } from '../Review';
 import { RelatedProducts } from '../RelatedProducts'
 import { useRef, useEffect } from 'react';
+import { useDispatch, useSelector} from 'react-redux'
+
 
 import './styles.scss';
 
@@ -28,9 +31,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/controller';
 
-
-import { useState } from 'react';
-
+import { addOrder } from '../../redux/action';
+import { changeQuantity } from '../../redux/action';
 
 const ProductCard = ({ productData, allProducts }) => {
     const [currentItemIndex, setCurrentItemIndex] = useState(0);
@@ -38,6 +40,29 @@ const ProductCard = ({ productData, allProducts }) => {
     const [sizeIndex, setSizeIndex] = useState(0);
     const swiperRef = useRef(null);
     const swiperRefSecond = useRef(null);
+
+    const orders = useSelector(store => store.orders);
+    const dispatch = useDispatch();
+
+    const addToCardClick = () => {
+        const id = `${productData.id}-${productData.sizes[sizeIndex]}-${productData.images[colorIndex].id}`
+        const isOrderWithIdExist = orders.some(elem => elem.customId === id)
+        
+        if (isOrderWithIdExist){
+            dispatch(changeQuantity(id, false))
+        } else {
+            dispatch(addOrder({
+                size: productData.sizes[sizeIndex],
+                meta: productData.images[colorIndex],
+                name: productData.name,
+                price: productData.price,
+                customId: id,
+                quantity: 1
+            }));
+        } 
+    }
+
+    console.log('orders', orders);
 
     const navigationPrevRef = useRef(null);
     const navigationNextRef = useRef(null);
@@ -232,8 +257,8 @@ const ProductCard = ({ productData, allProducts }) => {
                         <span className="price">
                             $ {productData.price} 
                         </span>
-                        <button className="add-to-card-button">
-                            Add to card
+                        <button data-test-id='add-cart-button' className="add-to-card-button" onClick={addToCardClick}>
+                            {orders.some(elem => elem.customId === `${productData.id}-${productData.sizes[sizeIndex]}-${productData.images[colorIndex].id}`) ? 'remove to card' : 'Add to card'}
                         </button>
                         <img className="icon" src={Heart} alt="heart icon" />
                         <img className="icon" src={Scale} alt="scale icon" />

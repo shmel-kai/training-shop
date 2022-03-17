@@ -178,6 +178,28 @@
                 padding: 0;
                 margin-left: 24px;
                 cursor: pointer;
+                position: relative;
+
+                .disabled-count-listner{
+                    display: none;
+                }
+
+                .count-listner{
+                    right: -3px;
+                    top: -4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    border-radius: 50%;
+                    background-color: #121212;
+                    color: white;
+                    width: 16px;
+                    height: 16px;
+                    font-size: 9px;
+                    font-weight: 700;
+                    line-height: 18px;
+                }
 
                 .img-button{
                     width: 24px;

@@ -1,0 +1,275 @@
+.disabled{
+    display: none;
+}
+
+.cart-block-wraper{
+    display: flex;
+
+    
+    .blur-window{
+        position: fixed;
+        z-index: 20;
+        background-color: rgba(18, 18, 18, 0.4);
+        width: 100%;
+        height: 100%;
+        top: 0px;
+      
+    }
+
+
+    .shoppingCart-wraper {
+        z-index: 21;
+        background-color: white;
+        width: 388px;
+        height: 100vh;
+        position: fixed;
+        right: 0px;
+        top: 0px;
+    
+        .shoppingCart-header {
+            background-color: #121212;
+            color: white;
+            padding: 13px 24px;
+            display: flex;
+            justify-content: space-between;
+            .title{
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 22px;
+                letter-spacing: 0.06em;
+                text-align: left;
+                text-transform: uppercase;
+            }
+    
+            .close-block{
+                cursor: pointer;
+                background-color: #121212;
+                border: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                img{
+                    width: 24px;
+                }
+            }
+        }
+    
+    
+        .shoppingCart-content-wraper{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 16px 24px 24px;
+            height: calc(100% - 88px);
+            
+            .top-wraper {
+                margin: 0;
+                padding: 0;
+                .shoppingCart-content {
+    
+                    .shoppingCart-menu {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 32px;
+
+                        :first-child{
+                            color: #121212;
+                        }
+            
+                        img {
+                            width: 24px;
+                        }
+                        span {
+                            font-size: 15px;
+                            font-weight: 400;
+                            line-height: 19px;
+                            letter-spacing: 0em;
+                            color: #E6E6E6;
+                        }
+                    }
+                }
+
+                .list-of-cart-item{
+                    overflow: scroll;
+                    height: calc(100vh - 324px);
+                    .cart-item {
+                        display: flex;
+                        align-items: flex-start;
+                        width: -webkit-fill-available;
+                        border-bottom: 2px solid #e2e2e2 ;
+                        padding-bottom: 12px;
+                        margin-bottom: 12px;
+                        
+        
+                        .img {
+                            width: 83px;   
+                            height: 104px; 
+                            margin-right: 16px;
+                        }
+                
+                        .cart-content {
+                            width: 100%;
+                            .name{
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 22px;
+                                letter-spacing: 0em;
+                                margin-bottom: 4px;
+                                text-align: left;
+                            }
+                
+                            .info {
+                                font-size: 12px;
+                                font-weight: 600;
+                                line-height: 18px;
+                                letter-spacing: 0em;
+                                text-align: left;
+                                margin-bottom: 28px;
+                            }
+                
+                            .price-count-info {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+        
+                                div{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    .counter{
+                                        display: flex;
+            
+                                        button{
+                                            font-size: 16px;
+                                            width: 32px;
+                                            height: 32px;
+                                            background-color: #F8F8F8;
+                                            border: none;
+                                            color: #919191;
+                                        }
+                                        .count {
+                                            display: flex;
+                                            align-items: center;
+                                            font-size: 14px;
+                                            font-weight: 400;
+                                            line-height: 22px;
+                                            background-color: #F8F8F8;
+                                        }
+                                    }
+                    
+                                    .item-price {
+                                        margin-left: 16px;
+                                        font-size: 14px;
+                                        font-weight: 700;
+                                        line-height: 22px;
+                                        letter-spacing: 0em;
+                                    }
+                                }
+                
+                                
+                
+                                .trash {
+                                    width: 24px;
+                                    height: 24px;
+                                }
+                            }
+                        }
+                    }
+                }
+            
+                
+            }
+    
+            .bottom-wraper {
+    
+                .total-price-block {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 26px;
+            
+                    .title {
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 22px;
+                        letter-spacing: 0em;
+                    }
+            
+                    .price {
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 24px;
+                        letter-spacing: 0.06em;
+                    }
+                }
+            
+                .check-out {
+                    border: none;
+                    width: 340px;
+                    height: 48px;
+                    background-color: #121212;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 15px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    margin-bottom: 12px;
+                }
+            
+                .view-cart {
+                    border: none;
+                    width: 340px;
+                    height: 48px;
+                    background-color: #F8F8F8;
+                    color: #121212;
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 15px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                }
+            }
+    
+        }
+    
+        .empty-cart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: calc(100vh - 80px);
+
+            .text{
+                padding-top: 46px;
+                font-size: 26px;
+                font-weight: 600;
+                line-height: 39px;
+                letter-spacing: 0em;
+            }
+            .back-to-shopping-button{
+                border: none;
+                    width: 340px;
+                    height: 48px;
+                    background-color: #121212;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 15px;
+                    letter-spacing: 0.06em;
+                    text-transform: uppercase;
+                    margin-bottom: 12px;
+                    cursor: pointer;
+            }
+        }
+    
+    
+    
+    
+    
+    }
+}
+

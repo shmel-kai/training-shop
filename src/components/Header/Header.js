@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 
+import  { ShoppingCart } from '../ShoppingCart';
+
 import PhoneIcon from './icons/phone.png';
 import LocationIcon from './icons/location.png';
 import ClockIcon from './icons/clock.png';
@@ -16,11 +18,24 @@ import Search from './icons/search.png';
 import Globe from './icons/globe.png';
 import User from './icons/user.png';
 
+import { useDispatch, useSelector} from 'react-redux';
+import { toggleCart } from '../../redux/action';
+
 
 import './styles.scss';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const dispatch = useDispatch();
+    const onCartClick = () => {
+        dispatch(toggleCart())
+    }
+
+    const countOfOrdersLength = useSelector(store => store.orders.length > 0);
+    const countOfOrders = useSelector(store => store.orders.length);
+
+    
     
    const onBurgerClick = () => {
         // setIsMenuOpen(currValue => !currValue);
@@ -57,6 +72,7 @@ const Header = () => {
         <header 
         onClick={outsideClickListner}
         className="header" data-test-id="header">
+            <ShoppingCart data-test-id='cart'></ShoppingCart>
             <div className="info-container">
                 <div className="info">
                     <div className="contacts">
@@ -122,7 +138,11 @@ const Header = () => {
                     <button className="button">
                         <img src={User} className="img-button" alt="User"/>
                     </button>
-                    <button className="button">
+                    <button data-test-id='cart-button'
+                        className="button"
+                        onClick={() => onCartClick()}
+                    >
+                        <div className={`${countOfOrdersLength ? 'count-listner' : 'disabled-count-listner'}`}>{countOfOrders}</div>
                         <img src={Bag} className="img-button" alt="Bag"/>
                     </button>
                     <button 
