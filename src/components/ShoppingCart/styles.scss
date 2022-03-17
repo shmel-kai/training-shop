@@ -5,11 +5,10 @@
 .cart-block-wraper{
     display: flex;
 
-    
     .blur-window{
         position: fixed;
         z-index: 20;
-        background-color: rgba(18, 18, 18, 0.4);
+        background-color: rgba(18, 18, 18, 0.41);
         width: 100%;
         height: 100%;
         top: 0px;
@@ -68,6 +67,7 @@
                 padding: 0;
                 display: flex;
                 flex-direction: column;
+                
                 .shoppingCart-content {
     
                     .shoppingCart-menu {
