@@ -10,14 +10,12 @@ import { Subscribe } from '../components/Subscribe';
 import { News } from '../components/News';
 import { sections } from '../components/News/MetaData/MetaData';
 import { Footer } from '../components/Footer/index'
-import { ErrorConnect } from '../components/Error'
 
 import { PRODUCTS_REQUESTED } from '../saga/productSaga';
 import { action } from '../redux/store'
 
 function Home() {
   const products = useSelector(store => store.productsSlice.products);
-  const errorConnect = useSelector(store => store.productsSlice.isError);
 
   useEffect(() => {
     action(PRODUCTS_REQUESTED);
@@ -26,9 +24,6 @@ function Home() {
   return (
     <>
       <Header />
-      {
-        errorConnect && <ErrorConnect data-test-id='error'/>
-      }
       <TopSection />
       <Details />
       <ItemsBlock products={products.women} title="WOMEN’S" data-test-id="clothes-women" type="women"/>

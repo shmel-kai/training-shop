@@ -4,6 +4,8 @@ import { useSelector} from 'react-redux';
 import { PRODUCTS_REQUESTED } from './saga/productSaga';
 import { Spinner } from './components/spinner';
 import { action } from './redux/store'
+import { ErrorConnect } from './components/Error'
+
 
 
 
@@ -12,10 +14,12 @@ import Women from "./routes/Women";
 import Men from "./routes/Men";
 import ProductPage from "./routes/ProductPage";
 
+
 import './App.css';
 
 function App() {
   const loading = useSelector(store => store.productsSlice.isLoading);
+  const errorConnect = useSelector(store => store.productsSlice.isError);
 
   useEffect(() => {
     action(PRODUCTS_REQUESTED);
@@ -26,6 +30,9 @@ function App() {
     <div className="app" data-test-id="app">
       {
         loading && <Spinner data-test-id='loader' />
+      }
+      {
+        errorConnect && <ErrorConnect data-test-id='error'/>
       }
       <Routes>
         <Route exact path="/" element={<Home />} />

@@ -14,7 +14,6 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { action } from '../redux/store'
 import { MEN_PRODUCTS_REQUESTED } from '../saga/productSaga'
-import { ErrorConnect } from '../components/Error'
 
 
 
@@ -26,7 +25,6 @@ function Men() {
 
 
   const menProducts = useSelector(store => store.productsSlice.products.men);
-  const errorConnect = useSelector(store => store.productsSlice.isError);
 
   //const productDataCategory = useLocation().state.category;
 
@@ -110,9 +108,6 @@ function Men() {
   return (
     <div className="App" data-test-id="products-page-men">
       <Header /> 
-      {
-        errorConnect && <ErrorConnect data-test-id='error'/>
-      }
       <CategoriesTitle title="Men"/>
       <Filter 
         type="men"
