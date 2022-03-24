@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 
 import { Header } from '../components/Header';
 import { TopSection } from '../components/TopSection';
@@ -10,7 +10,6 @@ import { Subscribe } from '../components/Subscribe';
 import { News } from '../components/News';
 import { sections } from '../components/News/MetaData/MetaData';
 import { Footer } from '../components/Footer/index'
-import { Spinner } from '../components/spinner';
 import { ErrorConnect } from '../components/Error'
 
 import { PRODUCTS_REQUESTED } from '../saga/productSaga';

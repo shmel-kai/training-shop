@@ -10,7 +10,7 @@ import rightArrow from './rightArrow.png';
 import { Controller, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { useDispatch, useSelector} from 'react-redux'
+import { useSelector} from 'react-redux'
 
 import 'swiper/css';
 import 'swiper/css/controller';
