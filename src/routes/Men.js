@@ -14,6 +14,8 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { action } from '../redux/store'
 import { MEN_PRODUCTS_REQUESTED } from '../saga/productSaga'
+import { PRODUCTS_REQUESTED } from '../saga/productSaga';
+
 
 
 
@@ -30,6 +32,7 @@ function Men() {
 
   useEffect(() => {
     action(MEN_PRODUCTS_REQUESTED);
+    action(PRODUCTS_REQUESTED);
   }, []);
 
   const setColorFilter = colorFilter => {
