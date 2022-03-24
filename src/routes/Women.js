@@ -3,13 +3,27 @@ import { useState } from 'react';
 import { Header } from '../components/Header';
 import { CategoriesTitle  } from '../components/CategoriesTitle';
 import { ItemsBlock } from '../components/ItemsBlock';
-import PRODUCTS from '../metadata/products.json';
 import { Filter } from '../components/Filter';
 import { Loading } from '../components/Loading';
 
 import { Footer } from '../components/Footer/index'
 
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { PRODUCTS_REQUESTED } from '../saga/productSaga';
+import { action } from '../redux/store'
+import { ErrorConnect } from '../components/Error'
+
 function Women() {
+
+  const womenProducts = useSelector(store => store.productsSlice.products);
+  const errorConnect = useSelector(store => store.productsSlice.isError);
+
+
+  useEffect(() => {
+    action(PRODUCTS_REQUESTED);
+  }, []);
+
   const [colorFilters, setColorFilters] = useState([]);
   const [sizeFilters, setSizeFilters] = useState([]);
   const [brandFilters, setBrandFilters] = useState([]);
@@ -48,7 +62,7 @@ function Women() {
   };
 
   const getFilteredProducts = () => {
-    let products = PRODUCTS.women;
+    let products = womenProducts.women;
     console.log('priceFilters', priceFilters)
 
     if (colorFilters.length) {
@@ -91,6 +105,9 @@ function Women() {
   return (
     <div className="App" data-test-id="products-page-women">
       <Header />
+      {
+        errorConnect && <ErrorConnect data-test-id='error' />
+      }
       <CategoriesTitle title="Women"/>
       <Filter 
         type="women"

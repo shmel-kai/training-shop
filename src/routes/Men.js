@@ -1,20 +1,38 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { Header } from '../components/Header';
 import { CategoriesTitle  } from '../components/CategoriesTitle';
 import { ItemsBlock } from '../components/ItemsBlock';
-import PRODUCTS from '../metadata/products.json';
 
 import { Filter } from '../components/Filter';
 import { Loading } from '../components/Loading';
 
 import { Footer } from '../components/Footer/index'
 
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { action } from '../redux/store'
+import { MEN_PRODUCTS_REQUESTED } from '../saga/productSaga'
+import { ErrorConnect } from '../components/Error'
+
+
+
 function Men() {
   const [colorFilters, setColorFilters] = useState([]);
   const [sizeFilters, setSizeFilters] = useState([]);
   const [brandFilters, setBrandFilters] = useState([]);
   const [priceFilters, setPriceFilters] = useState([]);
+
+
+  const menProducts = useSelector(store => store.productsSlice.products.men);
+  const errorConnect = useSelector(store => store.productsSlice.isError);
+
+  //const productDataCategory = useLocation().state.category;
+
+  useEffect(() => {
+    action(MEN_PRODUCTS_REQUESTED);
+  }, []);
 
   const setColorFilter = colorFilter => {
     if (!colorFilters.includes(colorFilter)) {
@@ -49,8 +67,8 @@ function Men() {
   };
 
   const getFilteredProducts = () => {
-    let products = PRODUCTS.men;
-    console.log('priceFilters', priceFilters)
+    let products = menProducts;
+    console.log('products', products)
 
     if (colorFilters.length) {
       products = products.filter(({ images }) => {
@@ -91,7 +109,10 @@ function Men() {
 
   return (
     <div className="App" data-test-id="products-page-men">
-      <Header />
+      <Header /> 
+      {
+        errorConnect && <ErrorConnect data-test-id='error'/>
+      }
       <CategoriesTitle title="Men"/>
       <Filter 
         type="men"

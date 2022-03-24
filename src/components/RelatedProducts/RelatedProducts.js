@@ -10,6 +10,8 @@ import rightArrow from './rightArrow.png';
 import { Controller, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { useDispatch, useSelector} from 'react-redux'
+
 import 'swiper/css';
 import 'swiper/css/controller';
 
@@ -17,6 +19,10 @@ import 'swiper/css/controller';
 const RelatedProducts = ({ allProducts }) => {
     const navigationPrevRef = useRef(null)
     const navigationNextRef = useRef(null)
+
+    const products = useSelector(store => store.productsSlice.products);
+    console.log('products', products )
+
     
 
     return (

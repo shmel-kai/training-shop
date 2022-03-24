@@ -1,0 +1,20 @@
+.error-wraper{
+    margin: 10px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1110px;
+    background-color: #ffdde4;
+    border: 1px solid #f7afaf;
+    text-align: center;
+    height: 40px;
+
+    @media (min-width: 641px) and (max-width: 1160px) {
+        margin: 10px 5% 10px;
+        
+    }
+
+    @media (min-width: 320px) and (max-width: 640px) {
+        margin: 10px 5% 10px;
+    }
+}

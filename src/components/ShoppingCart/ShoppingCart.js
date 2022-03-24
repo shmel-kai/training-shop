@@ -12,8 +12,8 @@ import { toggleCart } from '../../redux/action';
 const ShoppingCart = () => { 
 
     const dispatch = useDispatch();
-    const orders = useSelector(store => store.orders);
-    const isCartOpen = useSelector(store => store.isCartOpen);
+    const orders = useSelector(store => store.cart.orders);
+    const isCartOpen = useSelector(store => store.cart.isCartOpen);
     const onCartClick = () => {
         dispatch(toggleCart())
     }

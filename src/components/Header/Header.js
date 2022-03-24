@@ -32,20 +32,19 @@ const Header = () => {
         dispatch(toggleCart())
     }
 
-    const countOfOrdersLength = useSelector(store => store.orders.length > 0);
-    const countOfOrders = useSelector(store => store.orders.length);
+    const countOfOrdersLength = useSelector(store => store.cart.orders.length > 0);
+    const countOfOrders = useSelector(store => store.cart.orders.length);
 
     
-    
-   const onBurgerClick = () => {
+    const onBurgerClick = () => {
         // setIsMenuOpen(currValue => !currValue);
-       if (!isMenuOpen) {
-           setIsMenuOpen(true);
-           outsideClickListner()
+        if (!isMenuOpen) {
+            setIsMenuOpen(true);
+            outsideClickListner()
         } else {
             setIsMenuOpen(false);
         }
-   };
+    };
 
     const outsideClickListner = () => {
         if (isMenuOpen){
