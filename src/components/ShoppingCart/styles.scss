@@ -24,6 +24,10 @@
         right: 0px;
         top: 0px;
     
+        @media (min-width: 320px) and (max-width: 390px) {
+            width: auto;
+        }
+    
         .shoppingCart-header {
             background-color: #121212;
             color: white;

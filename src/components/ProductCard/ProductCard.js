@@ -85,7 +85,7 @@ const ProductCard = ({ productData, allProducts }) => {
     }, [productData.id]);
     
 
-    const colorArray = productData.images.reduce((acc, curr) => {
+    const colorArray = productData.images?.reduce((acc, curr) => {
         const colorsArray = acc.map((element) => element.color);
         if (!colorsArray.includes(curr.color)) {
             acc.push(curr);
@@ -146,7 +146,7 @@ const ProductCard = ({ productData, allProducts }) => {
                             }}
                         >
                             {
-                                productData.images.map((element, index) => (
+                                productData.images?.map((element, index) => (
                                     <SwiperSlide key={`${element.id}_${index}`}>
                                         <img 
                                             key={element.id}

@@ -29,10 +29,10 @@ function App() {
   return (
     <div className="app" data-test-id="app">
       {
-        loading && <Spinner data-test-id='loader' />
+        loading && <Spinner />
       }
       {
-        errorConnect && <ErrorConnect data-test-id='error'/>
+        errorConnect && <ErrorConnect />
       }
       <Routes>
         <Route exact path="/" element={<Home />} />

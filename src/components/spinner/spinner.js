@@ -2,7 +2,7 @@ import "./spiner.scss";
 
 const Spinner = (props) => {
     return (
-        <div className="spinner-wraper">
+        <div className="spinner-wraper" data-test-id="loader">
             <div className="spinner-container">
                 <svg width="100%"  viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg" >
                     <g id="spinner">
