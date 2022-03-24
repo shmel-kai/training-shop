@@ -1,6 +1,5 @@
 import { useState } from 'react';
-
-import PRODUCTS from '../../metadata/products.json';
+import { useSelector } from 'react-redux';
 
 import './styles.scss';
 
@@ -30,10 +29,12 @@ const Filter = ({
     setPriceFilter,
 }) => {
     const [isFilterOpen, setFilterOpen] = useState(false);
-    
-   const onFilterClick = () => setFilterOpen(!isFilterOpen);
 
-   const uniqueColors = PRODUCTS[type].reduce((colors, product) => {
+    const products = useSelector(store => store.productsSlice.products);
+    
+    const onFilterClick = () => setFilterOpen(!isFilterOpen);
+
+    const uniqueColors = products[type].reduce((colors, product) => {
        product.images.forEach(({ color }) => {
            if (!colors.includes(color)) {
                 colors.push(color);
@@ -41,9 +42,9 @@ const Filter = ({
        });
 
        return colors;
-   }, []);
+    }, []);
 
-   const uniqueSizes = PRODUCTS[type].reduce((sizes, product) => {
+    const uniqueSizes = products[type].reduce((sizes, product) => {
         product.sizes.forEach(size => {
             if (!sizes.includes(size)) {
                 sizes.push(size);
@@ -53,7 +54,7 @@ const Filter = ({
         return sizes;
     }, []);
 
-    const uniqueBrands = PRODUCTS[type].reduce((brands, product) => {
+    const uniqueBrands = products[type].reduce((brands, product) => {
         if (!brands.includes(product.brand)) {
             brands.push(product.brand);
         }

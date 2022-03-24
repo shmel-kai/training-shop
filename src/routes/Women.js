@@ -10,7 +10,6 @@ import { Footer } from '../components/Footer/index'
 
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { PRODUCTS_REQUESTED } from '../saga/productSaga';
 import { action } from '../redux/store'
 import { WOMEN_PRODUCTS_REQUESTED } from '../saga/productSaga'
 
@@ -24,10 +23,6 @@ function Women() {
     action(WOMEN_PRODUCTS_REQUESTED);
   }, []);
 
-
-  useEffect(() => {
-    action(PRODUCTS_REQUESTED);
-  }, []);
 
   const [colorFilters, setColorFilters] = useState([]);
   const [sizeFilters, setSizeFilters] = useState([]);
