@@ -10,7 +10,8 @@ import {
     PRODUCT_REQUEST_SUCCESS, 
     PRODUCT_REQUEST_ERROR,
     CURR_PRODUCT_REQUEST_SUCCESS,
-    MEN_PRODUCT_REQUEST_SUCCESS
+    MEN_PRODUCT_REQUEST_SUCCESS,
+    WOMEN_PRODUCT_REQUEST_SUCCESS
 } from '../saga/productSaga';
 
 
@@ -108,6 +109,18 @@ const productsSliceReducer = (state = productsSliceDefaultState, action) => {
                 products: {
                     ...state.products,
                     men: action.data,
+                },
+                isLoading: false,
+                isError: false,
+            }
+        }
+
+        case WOMEN_PRODUCT_REQUEST_SUCCESS: {
+            return {
+                ...state,
+                products: {
+                    ...state.products,
+                    women: action.data,
                 },
                 isLoading: false,
                 isError: false,

@@ -1,6 +1,7 @@
 import { put, call, all, takeLatest } from 'redux-saga/effects';
 
-
+export const WOMEN_PRODUCTS_REQUESTED = 'WOMEN_PRODUCTS_REQUESTED';
+export const WOMEN_PRODUCT_REQUEST_SUCCESS = 'WOMEN_PRODUCT_REQUEST_SUCCESS';
 export const MEN_PRODUCT_REQUEST_SUCCESS = 'MEN_PRODUCT_REQUEST_SUCCESS';
 export const MEN_PRODUCTS_REQUESTED = 'MEN_PRODUCTS_REQUESTED';
 export const PRODUCTS_REQUESTED = 'PRODUCTS_REQUESTED';
@@ -9,6 +10,7 @@ export const PRODUCTS_REQUEST_STARTED = 'PRODUCTS_REQUEST_STARTED';
 export const PRODUCT_REQUEST_SUCCESS = 'PRODUCT_REQUEST_SUCCESS';
 export const CURR_PRODUCT_REQUEST_SUCCESS = 'CURR_PRODUCT_REQUEST_SUCCESS';
 export const PRODUCT_REQUEST_ERROR = 'PRODUCT_REQUEST_ERROR';
+
 export const API = {
     products: 'https://training.cleverland.by/shop/products',
     product: 'https://training.cleverland.by/shop/product'
@@ -28,6 +30,10 @@ const currProductRequestSuccess = data => {
 
 const menProductsRequestSuccess = data => {
     return ({ type: MEN_PRODUCT_REQUEST_SUCCESS, data });
+};
+
+const womenProductsRequestSuccess = data => {
+    return ({ type: WOMEN_PRODUCT_REQUEST_SUCCESS, data });
 };
 
 const productsRequestError = errorMessage => {
@@ -70,6 +76,17 @@ function* menProductsRequestWorker(actionDataMen) {
     }
 }
 
+function* womenProductsRequestWorker(actionDataWomen) {
+    console.log('actionDataWomen', actionDataWomen);
+    try {
+        yield put(productsRequestStarted());
+        const data = yield call(fetchProducts, `${API.products}/women`);
+        yield put(womenProductsRequestSuccess(data));
+    } catch (err) {
+        yield put(productsRequestError(err.message));
+    }
+}
+
 function* watchProductsRequest() {
     yield takeLatest(PRODUCTS_REQUESTED, productsRequestWorker)
 }
@@ -81,6 +98,10 @@ function* watchProductRequest() {
 function* watchMenProductsRequest() {
     yield takeLatest(MEN_PRODUCTS_REQUESTED, menProductsRequestWorker)
 }
+
+function* watchWomenProductsRequest() {
+    yield takeLatest(WOMEN_PRODUCTS_REQUESTED, womenProductsRequestWorker)
+}
   
 
 // function* productsRequestWatcher() {
@@ -91,6 +112,7 @@ export default function* rootSaga() {
     yield all([
         watchProductsRequest(),
         watchProductRequest(),
-        watchMenProductsRequest()
+        watchMenProductsRequest(),
+        watchWomenProductsRequest()
     ])
   }

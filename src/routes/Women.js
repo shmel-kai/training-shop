@@ -12,10 +12,17 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { PRODUCTS_REQUESTED } from '../saga/productSaga';
 import { action } from '../redux/store'
+import { WOMEN_PRODUCTS_REQUESTED } from '../saga/productSaga'
+
 
 function Women() {
 
-  const womenProducts = useSelector(store => store.productsSlice.products);
+  const womenProducts = useSelector(store => store.productsSlice.products.women);
+
+
+  useEffect(() => {
+    action(WOMEN_PRODUCTS_REQUESTED);
+  }, []);
 
 
   useEffect(() => {
@@ -60,7 +67,7 @@ function Women() {
   };
 
   const getFilteredProducts = () => {
-    let products = womenProducts.women;
+    let products = womenProducts;
     console.log('priceFilters', priceFilters)
 
     if (colorFilters.length) {
