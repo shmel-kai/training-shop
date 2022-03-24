@@ -35,7 +35,7 @@ import { addOrder } from '../../redux/action';
 import { changeQuantity } from '../../redux/action';
 
 const ProductCard = ({ productData, allProducts }) => {
-    const products = useSelector(store => store.productsSlice.products);
+    //const products = useSelector(store => store.productsSlice.products);
     const [currentItemIndex, setCurrentItemIndex] = useState(0);
     const [colorIndex, setColorIndex] = useState(0);
     const [sizeIndex, setSizeIndex] = useState(0);
