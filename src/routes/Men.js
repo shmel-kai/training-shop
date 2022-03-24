@@ -32,6 +32,9 @@ function Men() {
 
   useEffect(() => {
     action(MEN_PRODUCTS_REQUESTED);
+  }, []);
+
+  useEffect(() => {
     action(PRODUCTS_REQUESTED);
   }, []);
 
